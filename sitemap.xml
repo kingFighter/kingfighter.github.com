@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://kingfighter.github.com/blog/2012/09/14/test/</loc>
+        <lastmod>2012-10-06T16:14:18+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://kingfighter.github.com/blog/2012/10/06/test/</loc>
+        <lastmod>2012-10-06T16:02:34+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://kingfighter.github.com/about/</loc>
+        <lastmod>2012-09-14T00:55:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://kingfighter.github.com/blog/archives/</loc>
+        <lastmod>2012-10-06T16:14:18+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://kingfighter.github.com/</loc>
+        <lastmod>2012-10-06T16:14:18+08:00</lastmod>
+    </url>
+</urlset>
