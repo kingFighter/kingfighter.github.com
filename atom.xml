@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2012-10-07T14:01:16+08:00</updated>
+  <updated>2012-10-07T15:04:47+08:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,5 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  Liquid error: incompatible character encodings: UTF-8 and GBK
+  
+  <entry>
+    <title type="html"><![CDATA[why]]></title>
+    <link href="/blog/2012/10/07/why/"/>
+    <updated>2012-10-07T15:04:00+08:00</updated>
+    <id>/blog/2012/10/07/why</id>
+    <content type="html"><![CDATA[<p>
+为什么 不成功
+</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="/blog/2012/10/07/test/"/>
+    <updated>2012-10-07T15:01:00+08:00</updated>
+    <id>/blog/2012/10/07/test</id>
+    <content type="html"><![CDATA[<p>
+I don&#8217;t know
+</p>]]></content>
+  </entry>
+  
 </feed>
