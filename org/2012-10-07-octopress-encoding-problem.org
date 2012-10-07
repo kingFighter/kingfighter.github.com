@@ -8,6 +8,8 @@ categories: [octopress]
 ---
 #+END_HTML
 #+AUTHOR: Lv Kaiyang(Kevin Lui)
+#+KEYWORDS: octopress,encoding
+
 * 初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题
 
 *注意：我的安装环境为win7 64位*

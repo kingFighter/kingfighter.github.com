@@ -8,4 +8,5 @@ categories: [statement]
 ---
 #+END_HTML
 #+AUTHOR: Lv Kaiyang(Kevin Lui)
-鉴于本人近期时间有限，无法对博客进行版式布局的改善，但会坚持丰富博客内容，欢迎各种交流。
+#+KEYWORDS: statement
+鉴于本人近期时间有限，无法对博客进行版式布局的改善，但会坚持丰富博客内容，欢迎各种交流.

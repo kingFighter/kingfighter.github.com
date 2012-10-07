@@ -1,0 +1,15 @@
+#+BEGIN_HTML
+---
+layout: post
+title: "octopress disqus加载问题"
+date: 2012-10-07 17:10
+comments: true
+categories: 
+---
+#+END_HTML
+#+AUTHOR: Lv Kaiyang(Kevin Lui)
+#+KEYWORDS: octopress,disqus
+
+#+begin_example
+DISQUS seems to be taking longer than usual. Reload?
+#+end_example
