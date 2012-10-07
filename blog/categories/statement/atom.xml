@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[eBash]]></title>
-  <link href="/atom.xml" rel="self"/>
+  <title><![CDATA[Category: statement | eBash]]></title>
+  <link href="/blog/categories/statement/atom.xml" rel="self"/>
   <link href="/"/>
   <updated>2012-10-07T14:01:16+08:00</updated>
   <id>/</id>
