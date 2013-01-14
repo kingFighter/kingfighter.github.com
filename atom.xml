@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[eBash]]></title>
-  <link href="kingfighter.github.com/atom.xml" rel="self"/>
-  <link href="kingfighter.github.com/"/>
-  <updated>2013-01-14T21:31:14+08:00</updated>
-  <id>kingfighter.github.com/</id>
+  <link href="http://kingfighter.github.com/atom.xml" rel="self"/>
+  <link href="http://kingfighter.github.com/"/>
+  <updated>2013-01-14T22:21:33+08:00</updated>
+  <id>http://kingfighter.github.com/</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[octopress-encoding-problem]]></title>
-    <link href="kingfighter.github.com/blog/2012/10/07/octopress-encoding-problem/"/>
+    <link href="http://kingfighter.github.com/blog/2012/10/07/octopress-encoding-problem/"/>
     <updated>2012-10-07T15:58:00+08:00</updated>
-    <id>kingfighter.github.com/blog/2012/10/07/octopress-encoding-problem</id>
+    <id>http://kingfighter.github.com/blog/2012/10/07/octopress-encoding-problem</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题</h2>
 <div class="outline-text-2" id="text-1">
@@ -142,9 +142,9 @@ export   LANG=zh_CN.UTF-8
   
   <entry>
     <title type="html"><![CDATA[statement]]></title>
-    <link href="kingfighter.github.com/blog/2012/10/07/statement/"/>
+    <link href="http://kingfighter.github.com/blog/2012/10/07/statement/"/>
     <updated>2012-10-07T15:50:00+08:00</updated>
-    <id>kingfighter.github.com/blog/2012/10/07/statement</id>
+    <id>http://kingfighter.github.com/blog/2012/10/07/statement</id>
     <content type="html"><![CDATA[<p>
 鉴于本人近期时间有限，无法对博客进行版式布局的改善，但会坚持丰富博客内容，欢迎各种交流.
 </p>]]></content>
