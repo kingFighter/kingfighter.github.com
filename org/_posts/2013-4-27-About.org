@@ -18,12 +18,14 @@ categories: [about]
 
 爱好:文学,计算机,设计,音乐
 
+GitHub:https://github.com/kingFighter
+
+邮箱:kevinlui598@gmail.com
+
 豆瓣:http://www.douban.com/people/48004543/
 
-GitHub:https://github.com/kingFighter
+
 
 个人简介:
 
    暂无
-
-
