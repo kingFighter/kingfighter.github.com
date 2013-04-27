@@ -20,7 +20,7 @@ categories: [about]
 
 GitHub:https://github.com/kingFighter
 
-邮箱:kevinlui598@gmail.com
+邮箱:mailto:kevinlui598@gmail.com
 
 豆瓣:http://www.douban.com/people/48004543/
 

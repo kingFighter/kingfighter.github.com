@@ -1,2 +1,74 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+html {
+  background: #555555 url("/images/galaxy.jpg");
+  //background: #555555;
+}
+
+body > div { 
+  background-image: none; 
+//background: #F5F5D5
+} //²à±ßÀ¸
+
+body > div > div { //ÎÄÕÂÄÚÈÝ
+  background-image: none; 
+  //background: #F5F5D5; 
+  //background: url("/images/textbg.jpg");
+}
+
+html {
+  body > header {
+    background: none;
+  padding: 1.6em 0 1em 0;
+  h1 {
+      @include text-shadow(0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135);
+    }
+    h2 {
+      margin-top: .5em;
+      display: none;
+    }
+  }
+}
+
+
+body > nav {
+  //background: url("/images/nav.jpg");
+  //background: #555555;
+  ul.main-navigation {
+    padding-left: 3px;
+  }
+  ul.subscription {
+    //display: none;
+  }
+  a {
+    &:hover {
+      color: hsl(209.01, 86.94%, 50.04%);
+      text-shadow:
+        hsl(209.01, 86.94%, 42.04%) 0px 0px 5px,
+        hsl(209.01, 86.94%, 42.04%) 0px 0px 7px,
+        hsl(209.01, 86.94%, 52.04%) 0px 0px 9px,
+        hsl(209.01, 86.94%, 52.04%) 0px 0px 11px,
+        hsl(0, 0%, 0%) 0 0 2px;
+
+    }
+    i {
+      color: hsl(209.01, 86.94%, 50.04%);
+      text-shadow:
+        hsl(209.01, 86.94%, 42.04%) 0px 0px 5px,
+        hsl(209.01, 86.94%, 42.04%) 0px 0px 7px,
+        hsl(209.01, 86.94%, 52.04%) 0px 0px 9px,
+        hsl(209.01, 86.94%, 52.04%) 0px 0px 11px,
+        hsl(0, 0%, 0%) 0 0 2px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1040px) {
+  body > nav {
+    @include border-top-radius(.4em);
+  }
+
+  body > footer {
+    @include border-bottom-radius(.4em);
+  }
+}
