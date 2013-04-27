@@ -1,0 +1,23 @@
+#+BEGIN_HTML
+---
+layout: post
+title: "About"
+date: 2013-4-27 20:26
+comments: true
+categories: [about]
+---
+#+END_HTML
+#+AUTHOR: Lv Kaiyang(Kevin Lui)
+#+KEYWORDS: about
+* 关于我
+英文名: Kevin Lui
+性别:男(单身)
+学校:上海交通大学
+爱好:文学,计算机,设计,音乐
+豆瓣:http://www.douban.com/people/48004543/
+GitHub:https://github.com/kingFighter
+
+个人简介:
+   暂无
+
+
