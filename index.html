@@ -9,8 +9,7 @@
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
-  <meta name="description" content="初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题 注意：我的安装环境为win7 64位 rake generate提示编码错误 以下是我碰到的已经解决的问题 ...
-/convertible.rb:29:in `read_yaml': invalid byte &hellip;">
+  <meta name="description" content="project euler problem 1 Problem If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +77,112 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/28/project-euler-1/">Project Euler Problem 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-28T20:23:00+08:00" pubdate data-updated="true">Apr 28<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/28/project-euler-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">project euler problem 1</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Problem</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<blockquote>
+
+<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+</p>
+<p>
+Find the sum of all the multiples of 3 or 5 below 1000.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Solution</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>   可以直接遍历找出所有整除3或5的数，然后相加，需要O(n)。但如果运用数学集合的概念,只要O(1).
+</p>
+<p>
+   基本思路:
+</p>
+<ol>
+<li>所有被3整除数相加
+        3 + 6 + &hellip; + 999 = 3 * (1 + 2 + &hellip; + 333)
+</li>
+<li>加上所有被5整除数
+        5 + 10 + &hellip; + 995 = 5 * (1 + 2 + &hellip; + 199)
+</li>
+<li>减去被15整除的数
+        15 + 30 + &hellip; + 995 = 15 * (1 + 2 + &hellip;+ 16)
+</li>
+</ol>
+
+
+
+<p>
+   其中(1 + 2 + &hellip; + n) = (1 + n) * n / 2;
+</p>
+<p>
+   333 = floor(1000/3);
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Answer</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>  233168
+</p>
+<p>
+Source:<a href="http://sdrv.ms/1512RxX">code</a>
+</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -287,6 +392,10 @@ export   LANG=zh_CN.UTF-8
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/28/project-euler-1/">project euler problem 1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/07/octopress-encoding-problem/">octopress-encoding-problem</a>
       </li>
     
@@ -300,6 +409,7 @@ export   LANG=zh_CN.UTF-8
   <h1>Categories</h1>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
 
   </ul>
