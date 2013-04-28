@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-04-28T22:08:08+08:00</updated>
+  <updated>2013-04-28T22:31:14+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -51,8 +51,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 </p>
 <p>
    基本思路:
-</p>
-<ol>
+</p><ol>
 <li>所有被3整除数相加
         3 + 6 + &hellip; + 999 = 3 * (1 + 2 + &hellip; + 333)
 </li>
