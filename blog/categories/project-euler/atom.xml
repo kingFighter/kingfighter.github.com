@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-04-29T23:50:48+08:00</updated>
+  <updated>2013-04-30T01:42:01+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 6]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/"/>
+    <updated>2013-04-29T23:58:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>The sum of the squares of the first ten natural numbers is,
+</p>
+<p>
+1<sup>2</sup> + 2<sup>2</sup> + &hellip; + 10<sup>2</sup> = 385
+The square of the sum of the first ten natural numbers is,
+</p>
+<p>
+(1 + 2 + &hellip; + 10)<sup>2</sup> = 55<sup>2</sup> = 3025
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025  385 = 2640.
+</p>
+<p>
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>可以直接依定义计算1<sup>2</sup> + 2<sup>2</sup> + &hellip; + n<sup>2</sup>,(1 + 2 + &hellip; + n)<sup>2再相减，或者利用简单的初等数学</sup>:
+</p>
+
+
+\begin{eqnarray}
+\sum_{i＝1}^na_{i} = \frac{(1+n)\times n}{2}
+\sum_{i＝1}^n a^2_i = \frac{(2n+1)(n+1)n}{6}
+\end{eqnarray}
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>25164150
+</p>
+<p>
+Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
+</p>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 2]]></title>
