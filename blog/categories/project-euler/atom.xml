@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-04-30T01:45:57+08:00</updated>
+  <updated>2013-04-30T02:01:12+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -71,15 +71,16 @@ Find the difference between the sum of the squares of the first one hundred natu
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>可以直接依定义计算1<sup>2</sup> + 2<sup>2</sup> + &hellip; + n<sup>2</sup>,(1 + 2 + &hellip; + n)<sup>2再相减，或者利用简单的初等数学</sup>:
+<p>可以直接依定义计算1<sup>2</sup> + 2<sup>2</sup> + &hellip; + n<sup>2</sup>,(1 + 2 + &hellip; + n)<sup>2</sup> 再相减，或者利用简单的初等数学:
 </p>
 
 
 \begin{eqnarray}
-\sum_{i＝1}^na_{i} = \frac{(1+n)\times n}{2}\\
+\sum_{i＝1}^na_{i} = \frac{(1+n) n}{2} 
+\end{eqnarray}
+\begin{eqnarray}
 \sum_{i＝1}^n a^2_i = \frac{(2n+1)(n+1)n}{6}
 \end{eqnarray}
-
 </div>
 
 </div>
