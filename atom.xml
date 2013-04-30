@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-04-30T11:16:31+08:00</updated>
+  <updated>2013-04-30T11:29:11+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,128 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 7]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-7/"/>
+    <updated>2013-04-30T11:25:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-7</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+</p>
+<p>
+What is the 10 001st prime number?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>找素数，没什么好说的，可以用 <a href="http://zh.wikipedia.org/wiki/埃拉托斯特尼筛法">爱氏筛</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  104743
+</p>
+<p>
+Source:<a href="http://sdrv.ms/ZSHxpw">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 4]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-4/"/>
+    <updated>2013-04-30T11:20:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-4</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 99.
+</p>
+<p>
+Find the largest palindrome made from the product of two 3-digit numbers.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>没什么好说的
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  906609
+</p>
+<p>
+Source:<a href="http://sdrv.ms/13HJlSk">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 3]]></title>
