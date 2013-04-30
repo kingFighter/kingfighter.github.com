@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 9 - eBash</title>
+  <title>project euler problem 14 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem A Pythagorean triplet is a set of three natural numbers, a b c, for which, a2 + b2 = c2 &hellip;">
+3 Answer 1 Problem The following iterative sequence is defined for the set of positive integers: n-&gt;n/2 (n &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-9/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-14/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +133,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 9</h1>
+      <h1 class="entry-title">Project Euler Problem 14</h1>
     
     
       <p class="meta">
@@ -149,7 +149,7 @@
   
 
 
-<time datetime="2013-04-30T11:45:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-04-30T13:48:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -176,15 +176,26 @@
 
 <blockquote>
 
-<p>A Pythagorean triplet is a set of three natural numbers, a  b  c, for which,
+<p>The following iterative sequence is defined for the set of positive integers:
 </p>
 <p>
-a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
-For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
+n-&gt;n/2 (n is even)
+n -&gt;n + 1 (n is odd)
 </p>
 <p>
-There exists exactly one Pythagorean triplet for which a + b + c = 1000.
-Find the product abc.
+Using the rule above and starting with 13, we generate the following sequence:
+</p>
+<p>
+13-&gt;40-&gt;20-&gt;10-&gt;5-&gt;16-&gt;8-&gt;4-&gt;2-&gt;1
+</p>
+<p>
+It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+</p>
+<p>
+Which starting number, under one million, produces the longest chain?
+</p>
+<p>
+NOTE: Once the chain starts the terms are allowed to go above one million.
 </p>
 </blockquote>
 
@@ -197,21 +208,8 @@ Find the product abc.
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>很直接
-</p>
-<p>
-假设 \(a \leqslant b \leqslant c\) ,则
-</p>
-
-
-\begin{eqnarray}
-a \leqslant \frac{s-3}{3}
-\end{eqnarray}
-\begin{eqnarray}
-b < \frac{s-a}{2}
-\end{eqnarray}
-
-</div>
+<p>没什么好说的
+</p></div>
 
 </div>
 
@@ -219,15 +217,11 @@ b < \frac{s-a}{2}
 <h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>  31875000
+<p>  837799
 </p>
 <p>
-Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
-</p>
-
-
-
-</div>
+Source:<a href="http://sdrv.ms/18idIQ7">C++</a>
+</p></div>
 </div>
 </div>
 
@@ -251,7 +245,7 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
   
 
 
-<time datetime="2013-04-30T11:45:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-04-30T13:48:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -265,7 +259,7 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-9/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-9/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-14/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-14/" >Tweet</a>
   
   
   
@@ -274,10 +268,8 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/04/30/project-euler-8/" title="Previous Post: project euler problem 8">&laquo; project euler problem 8</a>
+        <a class="basic-alignment left" href="/blog/2013/04/30/project-euler-20/" title="Previous Post: project euler problem 20">&laquo; project euler problem 20</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/30/project-euler-10/" title="Next Post: project euler problem 10">project euler problem 10 &raquo;</a>
       
     </p>
   </footer>
@@ -349,8 +341,8 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-9/';
-        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-9/';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-14/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-14/';
         var disqus_script = 'embed.js';
       
     (function () {
