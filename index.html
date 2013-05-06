@@ -202,31 +202,32 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 <p>我们知道&lt;1000的都可由,one,two&hellip;ninteen,twenty,thirty&hellip;ninety,hundred,and 这些英文字母表达出来，并将one~nineteen的字母数保存在数组 <code>a[19]={3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8}</code> 中，twenty,thirty..ninety的字母数保存在数组 <code>b[8]＝{6, 6, 5, 5, 5, 7, 6, 6}</code> 中，简单分类计算sum：
 </p>
 <ol>
-<li>sum = sum+ a[i - 1] \(i\in[1,20)\)
+<li>\(i\in[1,20)\) <br/>
+            sum = sum+ a[i - 1]
 </li>
 <li>\(i\in[20,100)\)
 <ol>
-<li>sum = sum + b[i / 10 - 2]   $i&isin;{20,30,..90}
+<li>sum = sum + b[i / 10 - 2]   \(i\in\) {20,30,..90}
 </li>
-<li>sum = sum + b[i / 10 - 2] + a[i % 10 - 1] $i&isin;{21,22,&hellip;99}
+<li>sum = sum + b[i / 10 - 2] + a[i % 10 - 1] \(i\in\) {21,22,&hellip;99}
 </li>
 </ol>
 
 </li>
 <li>\(i\in[100,1000)\)
 <ol>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;)  $i&isin;{100,200,300..900}
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;)  \(i\in\) {100,200,300..900}
 </li>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 100 - 1]; $i&isin;{101-119,201-219,&hellip;901-919}
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 100 - 1]; \(i\in\) {101-119,201-219,&hellip;901-919}
 </li>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + b[i / 10 % 10 - 2]; \(i\in{120,130,140..990}\)
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + b[i / 10 % 10 - 2]; \(i\in\) {120,130,140..990}
 </li>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 10 - 1] + b[i / 10 % 10 - 2]; $i&isin;{121,122&hellip;999}
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 10 - 1] + b[i / 10 % 10 - 2]; \(i\in\) {121,122&hellip;999}
 </li>
 </ol>
 
 </li>
-<li>\(i = 1000\)
+<li>\(i = 1000\) <br/>
    sum = sum + len(&#8220;one&#8221;) + len(&#8220;thousand&#8221;);
 </li>
 </ol>
