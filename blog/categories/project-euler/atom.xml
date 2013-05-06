@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-05T10:23:37+08:00</updated>
+  <updated>2013-05-06T12:36:20+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,113 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 17]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/05/project-euler-17/"/>
+    <updated>2013-05-05T11:09:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/05/project-euler-17</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+</p>
+<p>
+If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+</p>
+
+<p>
+NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>我们知道&lt;1000的都可由,one,two&hellip;ninteen,twenty,thirty&hellip;ninety,hundred,and 这些英文字母表达出来，并将one~nineteen的字母数保存在数组 <code>a[19]={3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8}</code> 中，twenty,thirty..ninety的字母数保存在数组 <code>b[8]＝{6, 6, 5, 5, 5, 7, 6, 6}</code> 中，简单分类计算sum：
+</p>
+<ol>
+<li>sum = sum+ a[i - 1] \(i\in[1,20)\)
+</li>
+<li>\(i\in[20,100)\)
+<ol>
+<li>sum = sum + b[i / 10 - 2]   $i&isin;{20,30,..90}
+</li>
+<li>sum = sum + b[i / 10 - 2] + a[i % 10 - 1] $i&isin;{21,22,&hellip;99}
+</li>
+</ol>
+
+</li>
+<li>\(i\in[100,1000)\)
+<ol>
+<li>sum = sum + a[i / 100 - 1] + len("hundred")  $i&isin;{100,200,300..900}
+</li>
+<li>sum = sum + a[i / 100 - 1] + len("hundred") + len("and") + a[i % 100 - 1]; $i&isin;{101-119,201-219,&hellip;901-919}
+</li>
+<li>sum = sum + a[i / 100 - 1] + len("hundred") + len("and") + b[i / 10 % 10 - 2]; \(i\in{120,130,140..990}\)
+</li>
+<li>sum = sum + a[i / 100 - 1] + len("hundred") + len("and") + a[i % 10 - 1] + b[i / 10 % 10 - 2]; $i&isin;{121,122&hellip;999}
+</li>
+</ol>
+
+</li>
+<li>\(i = 1000\)
+   sum = sum + len("one") + len("thousand");
+</li>
+</ol>
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  21124
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12afIbb">C++</a>
+</p>
+
+
+
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 15]]></title>
@@ -369,82 +476,6 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 <p>
 Source:<a href="http://sdrv.ms/18idIQ7">C++</a>
 </p></div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 20]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-20/"/>
-    <updated>2013-04-30T13:43:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-20</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>n! means n*(n-1)  &hellip;  3*2*1
-</p>
-<p>
-For example, 10! = 10*9  &hellip;  3*2*1 = 3628800, <br/>
-and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
-</p>
-<p>
-Find the sum of the digits in the number 100!
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>没什么好说的
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  648
-</p>
-<p>
-Source:<a href="http://sdrv.ms/YagdCR">C++</a>
-</p>
-
-
-
-</div>
 </div>
 
 ]]></content>
