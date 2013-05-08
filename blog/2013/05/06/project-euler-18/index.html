@@ -5,13 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 8 - eBash</title>
+  <title>project euler problem 18 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
-2 Solution
-3 Answer 1 Problem Find the greatest product of five consecutive digits in the 1000-digit number. &hellip;">
+2 Solution 2.1 Brute Force
+2.2 递归 2.2.1 分析
+2.2.2 例子 2.3 Bottom-Up 2.3.1 分析
+2.3.2 例子 3 Answer 1 Problem By starting at &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +135,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 8</h1>
+      <h1 class="entry-title">Project Euler Problem 18</h1>
     
     
       <p class="meta">
@@ -149,7 +151,7 @@
   
 
 
-<time datetime="2013-04-30T11:42:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-05-06T23:38:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -164,7 +166,22 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-2">2 Solution</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Brute Force</a></li>
+<li><a href="#sec-2-2">2.2 递归</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1 分析</a></li>
+<li><a href="#sec-2-2-2">2.2.2 例子</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">2.3 Bottom-Up</a>
+<ul>
+<li><a href="#sec-2-3-1">2.3.1 分析</a></li>
+<li><a href="#sec-2-3-2">2.3.2 例子</a></li>
+</ul></li>
+</ul>
+</li>
 <li><a href="#sec-3">3 Answer</a></li>
 </ul>
 </div>
@@ -176,29 +193,37 @@
 
 <blockquote>
 
-<p>Find the greatest product of five consecutive digits in the 1000-digit number.
+<p>By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+</p>
+
+
+<p style="text-align:center;font-family:courier new;font-size:12pt;"><span style="color:#ff0000;"><b>3</b></span><br />
+<span style="color:#ff0000;"><b>7</b></span> 4<br />
+2 <span style="color:#ff0000;"><b>4</b></span> 6<br />
+8 5 <span style="color:#ff0000;"><b>9</b></span> 3</p>
+
+<p>
+That is, 3 + 7 + 4 + 9 = 23.
 </p>
 <p>
-73167176531330624919225119674426574742355349194934
-96983520312774506326239578318016984801869478851843
-85861560789112949495459501737958331952853208805511
-12540698747158523863050715693290963295227443043557
-66896648950445244523161731856403098711121722383113
-62229893423380308135336276614282806444486645238749
-30358907296290491560440772390713810515859307960866
-70172427121883998797908792274921901699720888093776
-65727333001053367881220235421809751254540594752243
-52584907711670556013604839586446706324415722155397
-53697817977846174064955149290862569321978468622482
-83972241375657056057490261407972968652414535100474
-82166370484403199890008895243450658541227588666881
-16427171479924442928230863465674813919123162824586
-17866458359124566529476545682848912883142607690042
-24219022671055626321111109370544217506941658960408
-07198403850962455444362981230987879927244284909188
-84580156166097919133875499200524063689912560717606
-05886116467109405077541002256983155200055935729725
-71636269561882670428252483600823257530420752963450
+Find the maximum total from top to bottom of the triangle below:
+<p style="text-align:center;font-family:courier new;">75<br />
+95 64<br />
+17 47 82<br />
+18 35 87 10<br />
+20 04 82 47 65<br />
+19 01 23 75 03 34<br />
+88 02 77 73 07 63 67<br />
+99 65 04 28 06 16 70 92<br />
+41 41 26 56 83 40 80 70 33<br />
+41 48 72 33 47 32 37 16 94 29<br />
+53 71 44 65 25 43 91 52 97 51 14<br />
+70 11 33 28 77 73 17 78 39 68 17 57<br />
+91 71 52 38 17 14 91 43 58 50 27 29 48<br />
+63 66 04 68 89 53 67 30 73 16 69 87 40 31<br />
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</p>
+
+NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
 </p>
 </blockquote>
 
@@ -211,8 +236,112 @@
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>没什么好说的
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Brute Force</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>直接的方法就是brute force,但对于大数据量时速度会很慢.<br/>
+对于n层高,共有 \(\frac{(n+1)n}{2}\) 个数字,由归纳法易知需要穷尽 \(2^{n-1}\) 条路径,每条路径上有n个数字，需要 \(\Theta(2^{n-1}n)\) 的时间, 易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则 m = \(\frac{\sqrt{1+8m}-3}{2}\),代入其中即得关于输入个数m的时间复杂度.
 </p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 递归</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> 分析</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<p>    \(p_{i}\) 为第i个数字到最末层相邻数字相加最大值, \(a_{i}\) 为第i个数字的值, \(i\in(0,\frac{(n + 1)(n + 2)}{2})\) <br/>
+    题目所求为 \(p_{0}\) 的值，易知 \(p_{0}\) = max(\(p_{1}\), \(p_{2}\)) + \(a_{0}\) , \(p_{1}\) = max(\(p_{3}\), \(p_{4}\)) + \(a_{1}\) ,&hellip;<br/>
+    设共有n层高(从0开始),则对于i层(第 \(\frac{(i + 1)i}{2}\) ~ \(\frac{(i + 1)i}{2} + i\) 个数),以下等式成立:<br/>
+    \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
+    其终止条件为第n层时, \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
+    对于n层高,其时间复杂度为 \(\Theta(\frac{(n+1)n}{2})\),易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则转换知对于输入个数m,其时间复杂度为 \(\Theta(m)\),其时间复杂度为
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> 例子</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+<p>对于原题中的例子其递归调用过程如下:
+</p>
+<p class="verse">
+\(p_0\) = max(\(p_1\), \(p_2\)) + 3<br/>
+\(p_1\) = max(\(p_3\), \(p_4\)) + 7<br/>
+\(p_3\) = max(\(p_6\), \(p_7\)) + 2<br/>
+\(p_6\) = 8<br/>
+\(p_7\) = 5<br/>
+\(p_3\) = 8 + 2 = 10<br/>
+\(p_4\) = max(\(p_7\), \(p_8\)) + 4<br/>
+\(p_8\) = 9<br/>
+\(p_4\) = 9 + 4 = 13<br/>
+\(p_1\) = 9 + 4 + 7 = 20<br/>
+\(p_2\) = max(\(p_4\), \(p_5\)) + 4<br/>
+\(p_5\) = max(\(p_8\), \(p_9\)) + 6<br/>
+\(p_9\) = 3<br/>
+\(p_5\) = 9 + 6 = 15<br/>
+\(p_2\) = 9 + 6 + 4 = 19<br/>
+\(p_0\) = 9 + 4 + 7 + 3 = 23<br/>
+</p>
+
+
+<p>
+可以近似把所有数字看作一棵树,则为前序遍历,后序计算
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Bottom-Up</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> 分析</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+<p>我们将上述递归算法转换为迭代,过程如下: <br/>
+第n层时, \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
+第i层, \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
+与递归大抵类似.
+</p>
+<p>
+对于输入个数n,其时间复杂度与递归类似为 \(\Theta(n)\), 如果 \(p_i\) 与 \(a_i\) 使用同一数组,则其空间复杂度为 \(\Theta(1)\)
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> 例子</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<p>其计算过程如下:
+</p>
+
+
+<pre class="example">   3                3             3          23
+  7 4             7  4         20   19  
+ 2 4 6    -&gt;    10 13 15   -&gt;           -&gt;  
+8 5 9 3       
+</pre>
+
+</div>
+</div>
+</div>
 
 </div>
 
@@ -220,10 +349,10 @@
 <h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>  40824
+<p>  1074
 </p>
 <p>
-Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
+Source:<a href="http://sdrv.ms/18WJuTc">C++迭代</a> <a href="http://sdrv.ms/18WJyCn">C++递归</a>
 </p>
 
 
@@ -252,7 +381,7 @@ Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
   
 
 
-<time datetime="2013-04-30T11:42:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-05-06T23:38:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -266,7 +395,7 @@ Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/" >Tweet</a>
   
   
   
@@ -275,10 +404,8 @@ Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/04/30/project-euler-7/" title="Previous Post: project euler problem 7">&laquo; project euler problem 7</a>
+        <a class="basic-alignment left" href="/blog/2013/05/06/project-euler-18/" title="Previous Post: Project Euler 18">&laquo; Project Euler 18</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/30/project-euler-9/" title="Next Post: project euler problem 9">project euler problem 9 &raquo;</a>
       
     </p>
   </footer>
@@ -350,8 +477,8 @@ Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8/';
-        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8/';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/';
         var disqus_script = 'embed.js';
       
     (function () {

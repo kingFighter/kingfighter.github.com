@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-06T12:45:18+08:00</updated>
+  <updated>2013-05-08T16:28:11+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,284 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 18]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/"/>
+    <updated>2013-05-06T23:38:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Brute Force</a></li>
+<li><a href="#sec-2-2">2.2 递归</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1 分析</a></li>
+<li><a href="#sec-2-2-2">2.2.2 例子</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">2.3 Bottom-Up</a>
+<ul>
+<li><a href="#sec-2-3-1">2.3.1 分析</a></li>
+<li><a href="#sec-2-3-2">2.3.2 例子</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+</p>
+
+
+<p style="text-align:center;font-family:courier new;font-size:12pt;"><span style="color:#ff0000;"><b>3</b></span><br />
+<span style="color:#ff0000;"><b>7</b></span> 4<br />
+2 <span style="color:#ff0000;"><b>4</b></span> 6<br />
+8 5 <span style="color:#ff0000;"><b>9</b></span> 3</p>
+
+<p>
+That is, 3 + 7 + 4 + 9 = 23.
+</p>
+<p>
+Find the maximum total from top to bottom of the triangle below:
+<p style="text-align:center;font-family:courier new;">75<br />
+95 64<br />
+17 47 82<br />
+18 35 87 10<br />
+20 04 82 47 65<br />
+19 01 23 75 03 34<br />
+88 02 77 73 07 63 67<br />
+99 65 04 28 06 16 70 92<br />
+41 41 26 56 83 40 80 70 33<br />
+41 48 72 33 47 32 37 16 94 29<br />
+53 71 44 65 25 43 91 52 97 51 14<br />
+70 11 33 28 77 73 17 78 39 68 17 57<br />
+91 71 52 38 17 14 91 43 58 50 27 29 48<br />
+63 66 04 68 89 53 67 30 73 16 69 87 40 31<br />
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</p>
+
+NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Brute Force</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>直接的方法就是brute force,但对于大数据量时速度会很慢.<br/>
+对于n层高,共有 \(\frac{(n+1)n}{2}\) 个数字,由归纳法易知需要穷尽 \(2^{n-1}\) 条路径,每条路径上有n个数字，需要 \(\Theta(2^{n-1}n)\) 的时间, 易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则 m = \(\frac{\sqrt{1+8m}-3}{2}\),代入其中即得关于输入个数m的时间复杂度.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 递归</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> 分析</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<p>    \(p_{i}\) 为第i个数字到最末层相邻数字相加最大值, \(a_{i}\) 为第i个数字的值, \(i\in(0,\frac{(n + 1)(n + 2)}{2})\) <br/>
+    题目所求为 \(p_{0}\) 的值，易知 \(p_{0}\) = max(\(p_{1}\), \(p_{2}\)) + \(a_{0}\) , \(p_{1}\) = max(\(p_{3}\), \(p_{4}\)) + \(a_{1}\) ,&hellip;<br/>
+    设共有n层高(从0开始),则对于i层(第 \(\frac{(i + 1)i}{2}\) ~ \(\frac{(i + 1)i}{2} + i\) 个数),以下等式成立:<br/>
+    \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
+    其终止条件为第n层时, \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
+    对于n层高,其时间复杂度为 \(\Theta(\frac{(n+1)n}{2})\),易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则转换知对于输入个数m,其时间复杂度为 \(\Theta(m)\),其时间复杂度为
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> 例子</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+<p>对于原题中的例子其递归调用过程如下:
+</p>
+<p class="verse">
+\(p_0\) = max(\(p_1\), \(p_2\)) + 3<br/>
+\(p_1\) = max(\(p_3\), \(p_4\)) + 7<br/>
+\(p_3\) = max(\(p_6\), \(p_7\)) + 2<br/>
+\(p_6\) = 8<br/>
+\(p_7\) = 5<br/>
+\(p_3\) = 8 + 2 = 10<br/>
+\(p_4\) = max(\(p_7\), \(p_8\)) + 4<br/>
+\(p_8\) = 9<br/>
+\(p_4\) = 9 + 4 = 13<br/>
+\(p_1\) = 9 + 4 + 7 = 20<br/>
+\(p_2\) = max(\(p_4\), \(p_5\)) + 4<br/>
+\(p_5\) = max(\(p_8\), \(p_9\)) + 6<br/>
+\(p_9\) = 3<br/>
+\(p_5\) = 9 + 6 = 15<br/>
+\(p_2\) = 9 + 6 + 4 = 19<br/>
+\(p_0\) = 9 + 4 + 7 + 3 = 23<br/>
+</p>
+
+
+<p>
+可以近似把所有数字看作一棵树,则为前序遍历,后序计算
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Bottom-Up</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> 分析</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+<p>我们将上述递归算法转换为迭代,过程如下: <br/>
+第n层时, \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
+第i层, \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
+与递归大抵类似.
+</p>
+<p>
+对于输入个数n,其时间复杂度与递归类似为 \(\Theta(n)\), 如果 \(p_i\) 与 \(a_i\) 使用同一数组,则其空间复杂度为 \(\Theta(1)\)
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> 例子</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<p>其计算过程如下:
+</p>
+
+
+<pre class="example">   3                3             3          23
+  7 4             7  4         20   19  
+ 2 4 6    -&gt;    10 13 15   -&gt;           -&gt;  
+8 5 9 3       
+</pre>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  1074
+</p>
+<p>
+Source:<a href="http://sdrv.ms/18WJuTc">C++迭代</a> <a href="http://sdrv.ms/18WJyCn">C++递归</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project Euler 18]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18/"/>
+    <updated>2013-05-06T00:00:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/06/project-euler-18</id>
+    <content type="html"><![CDATA[                       % -*- coding: utf-8 -*-
+                       =======================
+
+Author: Lv Kaiyang(Kevin Lui)
+Date: 2013-05-07 20:52:03 中国标准时间
+
+
+% -*- coding: utf-8 -*-
+Table of Contents
+=================
+1 Problem
+2 Solution
+    2.1 Brute Force
+    2.2 递归
+    2.3 Bottom-Up
+3 Answer
+
+
+
+1 Problem 
+----------
+ORG-BLOCKQUOTE-START
+By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+
+
+That is, 3 + 7 + 4 + 9 = 23.
+
+Find the maximum total from top to bottom of the triangle below:
+
+NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+ORG-BLOCKQUOTE-END
+
+2 Solution 
+-----------
+
+2.1 Brute Force 
+================
+直接的方法就是brute force,但对于大数据量时速度会很慢.
+对于n层高,共有 $\frac{(n+1)n}{2}$ 个数字,由归纳法易知需要穷尽 $2^{n-1}$ 条路径,每条路径上有n个数字，需要 $Theta(2^{n-1}n)$ 的时间
+
+2.2 递归 
+=========
+   $p_{i}$ 为第i个数字到最末层相邻数字相加最大值, $a_{i}$ 为第i个数字的值, $i\in(0,\frac{(n + 1)(n + 2)}{2})$ 
+   题目所求为 $p_{0}$ 的值，易知 $p_{0}$ = max($p_{1}$, $p_{2}$) + $a_{0}$ , $p_{1}$ = max($p_{3}$, $p_{4}$) + $a_{1},...
+   设共有n层高(从0开始),则对于i层(第 $\frac{(i + 1)i}{2}$ ~ $\frac{(i + 1)i}{2} + i$ 个数),以下等式成立:
+   $p_{j}$ = max($p_{j + i + 1}$, $p_{j + i + 2}$) + $a_{j}$  j $\in[\frac{(i + 1)i}{2}$ , $\frac{(i + 1)i}{2} + i]$ 
+   对于n层高,其时间复杂度为 $Theta(\frac{(n+1)n}{2})$,易知数字总数m = $\frac{(n + 2)(n + 1)}{2}$ ,则转换知对于输入个数m,其时间复杂度为 $Theta(m)$
+
+2.3 Bottom-Up 
+==============
+
+3 Answer 
+---------
+
+
+Source:[C++]
+
+
+
+ 
+
+[C++]: http://sdrv.ms/12afIbb
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 17]]></title>
@@ -1478,212 +1756,6 @@ F(n) = F(n-1) + F(n-2) <br/>
 Source:<a href="http://sdrv.ms/153CEPc">C++</a>
 </p>
 
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 1]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/28/project-euler-1/"/>
-    <updated>2013-04-28T20:23:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/28/project-euler-1</id>
-    <content type="html"><![CDATA[<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-</p>
-<p>
-Find the sum of all the multiples of 3 or 5 below 1000.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  可以直接遍历找出所有整除3或5的数，然后相加，需要 \(O\) (n)。但如果运用数学集合的概念,只要 \(O\) (1).
-</p>
-<p>
-  基本思路:
-</p><ol>
-<li>所有被3整除数相加
-       3 + 6 + &hellip; + 999 = 3 * (1 + 2 + &hellip; + 333)
-</li>
-<li>加上所有被5整除数
-       5 + 10 + &hellip; + 995 = 5 * (1 + 2 + &hellip; + 199)
-</li>
-<li>减去被15整除的数
-       15 + 30 + &hellip; + 995 = 15 * (1 + 2 + &hellip;+ 16)
-</li>
-</ol>
-
-
-
-<p>
-  其中(1 + 2 + &hellip; + n) = (1 + n) * n / 2;
-</p>
-<p>
-  333 = floor(1000/3);
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  233168
-</p>
-<p>
-Source:<a href="http://sdrv.ms/1512RxX">C++</a>
-</p></div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[octopress-encoding-problem]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2012/10/07/octopress-encoding-problem/"/>
-    <updated>2012-10-07T15:58:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2012/10/07/octopress-encoding-problem</id>
-    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题</h2>
-<div class="outline-text-2" id="text-1">
-
-
-<p>
-<b>注意：我的安装环境为win7 64位</b>
-</p>
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">rake generate提示编码错误</h3>
-<div class="outline-text-3" id="text-1-1">
-
-
-<p>
-以下是我碰到的已经解决的问题
-</p>
-
-
-
-<pre class="example">...
-/convertible.rb:29:in `read_yaml': invalid byte sequence in GBK (ArgumentError)
-....
-</pre>
-
-
-<p>
-原因：你生成的文件编码方式不是Ansi(比如是UTF－8)
-</p>
-<p>
-解决：转换文件编码为Ansi即可，不过生成的网页在UTF-8下会显示乱码
-</p>
-
-
-
-<pre class="example">...
-invalid byte sequence in UTF-8 (ArgumentError)
-...
-</pre>
-
-
-<p>
-原因：你生成的文件编码方式为UTF-8，,但在Ruby <b>convertible.rb</b> 文件中没有进行相应的修改
-</p>
-<p>
-解决：
-</p>
-
-
-<pre class="example">def read_yaml(base, name)
-     -self.content = File.read(File.join(base, name))
-     +self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
-</pre>
-
-
-
-</div>
-
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">下面是我尝试但无效的解决方法</h4>
-<div class="outline-text-4" id="text-1-1-1">
-
-
-<p>
-解决： 在命令行下改变当前代码页编码为UTF-8：
-</p>
-
-
-<pre class="example">chcp.com 65001
-</pre>
-
-
-
-<p>
-解决：
-</p>
-
-
-<pre class="example">`打开 shell|cmd 之后，先执行
-
-    set LC_ALL=en_US.UTF-8
-    set LANG=en_US.UTF-8
-然后再执行 rake 的命令。
-或者，在 d:\RailsInstaller\Ruby1.9.2\setup_environment.bat 的最后面加上这两句。
-</pre>
-
-
-<p>
-解决：在octopress根目录下加
-</p>
-
-
-<pre class="example">export LC_ALL=zh_CN.UTF-8
-export LANG=zh_CN.UTF-8
-</pre>
-
-
-<p>
-解决：与上一解决方法相似，只是加入的位置不同
-</p>
-
-
-<pre class="example">在git bash下
-cd ~
-emacs -nw .bash_profile
-加入
-export   LC_ALL=zh_CN.UTF-8
-export   LANG=zh_CN.UTF-8
-</pre>
-
-
-
-
-</div>
-</div>
 </div>
 </div>
 ]]></content>
