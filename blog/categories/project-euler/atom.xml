@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-08T17:07:47+08:00</updated>
+  <updated>2013-05-08T17:14:27+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -130,8 +130,9 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
     设共有n层高(从0开始),则对于i层(第 \(\frac{(i + 1)i}{2}\) ~ \(\frac{(i + 1)i}{2} + i\) 个数),以下等式成立:<br/>
     \begin{eqnarray}
     p_i=\left\{\begin{matrix}
-    max(p_{j + i + 1}, p_{j + i + 2}) + a_{j} \ \       j \in[\frac{(i + 1)i}{2} , \frac{(i + 1)i}{2} + i] \\ \\ \ \ \ \ 
-    a_j \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   \ \ \  \   \ \ \ \ \ \ \ \  \ \ \   j \in[\frac{(n + 1)n}{2} , \frac{(n + 1)n}{2} + n]
+    max(p_{j + i + 1}, p_{j + i + 2}) + a_{j} \ \ j \in[\frac{(i + 1)i}{2} , \frac{(i + 1)i}{2} + i] \\ \\ 
+    \  \  \ a_j \ \  \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \   \ \ \  \ \ \  \ \ \ \ \  \  \  \ \ \ \  \ \ \ v
+    j \in[\frac{(n + 1)n}{2} , \frac{(n + 1)n}{2} + n]
     \end{matrix}\right.
     \end{eqnarray}
     对于n层高,其时间复杂度为 \(\Theta(\frac{(n+1)n}{2})\),易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则转换知对于输入个数m,其时间复杂度为 \(\Theta(m)\)
