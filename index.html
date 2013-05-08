@@ -266,9 +266,13 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
 <p>    \(p_{i}\) 为第i个数字到最末层相邻数字相加最大值, \(a_{i}\) 为第i个数字的值, \(i\in(0,\frac{(n + 1)(n + 2)}{2})\) <br/>
     题目所求为 \(p_{0}\) 的值，易知 \(p_{0}\) = max(\(p_{1}\), \(p_{2}\)) + \(a_{0}\) , \(p_{1}\) = max(\(p_{3}\), \(p_{4}\)) + \(a_{1}\) ,&hellip;<br/>
     设共有n层高(从0开始),则对于i层(第 \(\frac{(i + 1)i}{2}\) ~ \(\frac{(i + 1)i}{2} + i\) 个数),以下等式成立:<br/>
-    \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
-    其终止条件为第n层时, \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
-    对于n层高,其时间复杂度为 \(\Theta(\frac{(n+1)n}{2})\),易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则转换知对于输入个数m,其时间复杂度为 \(\Theta(m)\),其时间复杂度为
+    \begin{eqnarray}
+    p_i=\left\{\begin{matrix}
+    max(p_{j + i + 1}, p_{j + i + 2}) + a_{j} \ \       j \in[\frac{(i + 1)i}{2} , \frac{(i + 1)i}{2} + i] &#92; &#92; \ \ \ \ 
+    a_j \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   \ \ \  \   \ \ \ \ \ \ \ \  \ \ \   j \in[\frac{(n + 1)n}{2} , \frac{(n + 1)n}{2} + n]
+    \end{matrix}\right.
+    \end{eqnarray}
+    对于n层高,其时间复杂度为 \(\Theta(\frac{(n+1)n}{2})\),易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则转换知对于输入个数m,其时间复杂度为 \(\Theta(m)\)
 </p></div>
 
 </div>
@@ -362,106 +366,6 @@ Source:<a href="http://sdrv.ms/18WJuTc">C++迭代</a> <a href="http://sdrv.ms/18
 
 </div>
 </div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/06/project-euler-18/">Project Euler 18</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-06T00:00:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/05/06/project-euler-18/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">                       % -*- coding: utf-8 -*-
-                       =======================
-
-Author: Lv Kaiyang(Kevin Lui)
-Date: 2013-05-07 20:52:03 中国标准时间
-
-
-% -*- coding: utf-8 -*-
-Table of Contents
-=================
-1 Problem
-2 Solution
-    2.1 Brute Force
-    2.2 递归
-    2.3 Bottom-Up
-3 Answer
-
-
-
-1 Problem 
-&#8212;&#8212;&#8212;-
-ORG-BLOCKQUOTE-START
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
-
-
-That is, 3 + 7 + 4 + 9 = 23.
-
-Find the maximum total from top to bottom of the triangle below:
-
-NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
-ORG-BLOCKQUOTE-END
-
-2 Solution 
-&#8212;&#8212;&#8212;&#8211;
-
-2.1 Brute Force 
-================
-直接的方法就是brute force,但对于大数据量时速度会很慢.
-对于n层高,共有 $\frac{(n+1)n}{2}$ 个数字,由归纳法易知需要穷尽 $2^{n-1}$ 条路径,每条路径上有n个数字，需要 $Theta(2^{n-1}n)$ 的时间
-
-2.2 递归 
-=========
-   $p_{i}$ 为第i个数字到最末层相邻数字相加最大值, $a_{i}$ 为第i个数字的值, $i\in(0,\frac{(n + 1)(n + 2)}{2})$ 
-   题目所求为 $p_{0}$ 的值，易知 $p_{0}$ = max($p_{1}$, $p_{2}$) + $a_{0}$ , $p_{1}$ = max($p_{3}$, $p_{4}$) + $a_{1},&#8230;
-   设共有n层高(从0开始),则对于i层(第 $\frac{(i + 1)i}{2}$ ~ $\frac{(i + 1)i}{2} + i$ 个数),以下等式成立:
-   $p_{j}$ = max($p_{j + i + 1}$, $p_{j + i + 2}$) + $a_{j}$  j $\in[\frac{(i + 1)i}{2}$ , $\frac{(i + 1)i}{2} + i]$ 
-   对于n层高,其时间复杂度为 $Theta(\frac{(n+1)n}{2})$,易知数字总数m = $\frac{(n + 2)(n + 1)}{2}$ ,则转换知对于输入个数m,其时间复杂度为 $Theta(m)$
-
-2.3 Bottom-Up 
-==============
-
-3 Answer 
-&#8212;&#8212;&#8212;
-
-
-Source:[C++]
-
-
-
- 
-
-[C++]: http://sdrv.ms/12afIbb
-
 </div>
   
   
@@ -1464,6 +1368,96 @@ Source:<a href="http://sdrv.ms/YaeXj0">C++</a>
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/30/project-euler-16/">Project Euler Problem 16</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-30T13:11:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/30/project-euler-16/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>\(2^{15}\) = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+</p>
+<p>
+What is the sum of the digits of the number \(2^{1000}\) ?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>没什么好说的,关键在于大数据的处理
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  1366
+</p>
+<p>
+Source:<a href="http://sdrv.ms/10QuCrB">C++</a>
+</p>
+
+
+
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1483,10 +1477,6 @@ Source:<a href="http://sdrv.ms/YaeXj0">C++</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/05/06/project-euler-18/">Project Euler 18</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/05/05/project-euler-17/">project euler problem 17</a>
       </li>
     
@@ -1496,6 +1486,10 @@ Source:<a href="http://sdrv.ms/YaeXj0">C++</a>
     
       <li class="post">
         <a href="/blog/2013/04/30/project-euler-25/">project euler problem 25</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/30/project-euler-12/">project euler problem 12</a>
       </li>
     
   </ul>
