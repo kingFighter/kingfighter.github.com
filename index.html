@@ -199,7 +199,9 @@ Evaluate the sum of all the amicable numbers under 10000.
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>  按题意暴力求解,但我们还是能在细节进行一些优化.
+
+<p>
+  按题意暴力求解,但我们还是能在细节进行一些优化.
 </p><ol>
 <li>我们只寻找amicable pair numbers中小的数,但相加时把两者都加上.
 </li>
@@ -209,7 +211,7 @@ Evaluate the sum of all the amicable numbers under 10000.
 </li>
 <li>我们考虑求质数,公式(
                       \ref{ref1}
-        ),公式{
+        ),公式(
         \ref{ref2}
         )明显成立,公式(
         \ref{ref3}
@@ -223,20 +225,22 @@ Evaluate the sum of all the amicable numbers under 10000.
                            = getDivisorSum(p1) * getDivisorSum(p2) * ... * getDivisorSum(pn)
 </pre>
 
-
-<p>
-        \begin{eqnarray}
-        getDivisorSum(p) = (p + 1)\label{ref1}&#92;
-        getDivisorSum(p^i) = 1 + p^2 + &#8230; + p^i = \frac{p^{i+1}-1}{p-1}\label{ref2}&#92;
-        getDivisorSum(p1*p2*..p_n) = getDivisorSum(p1) * getDivisorSum(p2) * &#8230;\label{ref3}
-        \end{eqnarray}
-        利用这一特性,我们可以将getDivisorSum进一步优化
-</p></li>
+</li>
 </ol>
 
 </li>
 </ol>
 
+
+\begin{eqnarray}
+getDivisorSum(p) = (p + 1)\label{ref1}&#92;
+\end{eqnarray}
+\begin{eqnarray}
+getDivisorSum(p^i) = 1 + p^2 + &#8230; + p^i = \frac{p^{i+1}-1}{p-1}\label{ref2}&#92;
+\end{eqnarray}
+\begin{eqnarray}
+getDivisorSum(p1*p2*..p_n) = getDivisorSum(p1) * getDivisorSum(p2) * &#8230;\label{ref3}
+\end{eqnarray}
 
 </div>
 
