@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 5 - eBash</title>
+  <title>project euler problem 21 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 &hellip;">
+3 Answer 1 Problem Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/05/17/project-euler-21/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +133,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 5</h1>
+      <h1 class="entry-title">Project Euler Problem 21</h1>
     
     
       <p class="meta">
@@ -149,7 +149,7 @@
   
 
 
-<time datetime="2013-04-30T10:18:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-05-17T16:34:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -176,10 +176,14 @@
 
 <blockquote>
 
-<p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+<p>Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
+If d(a) = b and d(b) = a, where a  b, then a and b are an amicable pair and each of a and b are called amicable numbers.
 </p>
 <p>
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+</p>
+<p>
+Evaluate the sum of all the amicable numbers under 10000.
 </p>
 </blockquote>
 
@@ -192,21 +196,46 @@ What is the smallest positive number that is evenly divisible by all of the numb
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>可以直接依题意解决，或者稍微用点数学的知识.
-</p>
-<p>
-我们知道任何大于1的自然数n可以用：
-</p>
+<p>  按题意暴力求解,但我们还是能在细节进行一些优化.
+</p><ol>
+<li>我们只寻找amicable pair numbers中小的数,但相加时把两者都加上.
+</li>
+<li>getDivisorSum的优化
+<ol>
+<li>直观的,循环只要到sqrt(n)就行,因为除数是对应的,n = a * b,由反证法易知一数小于等于sqrt(n)，另一数大于等于sqrt(n);
+</li>
+<li>我们考虑求质数,公式(
+                      \ref{ref1}
+        ),公式{
+        \ref{ref2}
+        )明显成立,公式(
+        \ref{ref3}
+        )左右两边展开相等可证<br/>
 
 
-\(n = p_{i}^{a_{i}}p_{i+1}^{a_{i+1}}&#8230;p_{j}^{a_{j}}\)
+
+
+<pre class="example">getDivisorSum(p1*p2*..p_n) = 1+ p1 + p2 + ... pn + p1p2 + .. + p(n-1)p(n) + ... + p1p2..pn 
+                           = (1 + p1)(1 + p2)...(1 + pn) 
+                           = getDivisorSum(p1) * getDivisorSum(p2) * ... * getDivisorSum(pn)
+</pre>
+
 
 <p>
-其中 \(p_{i}\) 为素数, \(a_i\) 为幂次.
-</p>
-<p>
-我们只要找出 k = 20时，其各素数的最高次冥，然后相乘即可.
-</p></div>
+        \begin{eqnarray}
+        getDivisorSum(p) = (p + 1)\label{ref1}&#92;
+        getDivisorSum(p^i) = 1 + p^2 + &#8230; + p^i = \frac{p^{i+1}-1}{p-1}\label{ref2}&#92;
+        getDivisorSum(p1*p2*..p_n) = getDivisorSum(p1) * getDivisorSum(p2) * &#8230;\label{ref3}
+        \end{eqnarray}
+        利用这一特性,我们可以将getDivisorSum进一步优化
+</p></li>
+</ol>
+
+</li>
+</ol>
+
+
+</div>
 
 </div>
 
@@ -214,10 +243,10 @@ What is the smallest positive number that is evenly divisible by all of the numb
 <h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>  232792560
+<p>  31626
 </p>
 <p>
-Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
+Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
 </p>
 
 
@@ -246,7 +275,7 @@ Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
   
 
 
-<time datetime="2013-04-30T10:18:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-05-17T16:34:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -260,7 +289,7 @@ Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/05/17/project-euler-21/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/05/17/project-euler-21/" >Tweet</a>
   
   
   
@@ -269,10 +298,8 @@ Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/04/29/project-euler-6/" title="Previous Post: project euler problem 6">&laquo; project euler problem 6</a>
+        <a class="basic-alignment left" href="/blog/2013/05/14/how-to-read-a-book/" title="Previous Post: how to read a book">&laquo; how to read a book</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/30/project-euler-3/" title="Next Post: project euler problem 3">project euler problem 3 &raquo;</a>
       
     </p>
   </footer>
@@ -344,8 +371,8 @@ Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5/';
-        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5/';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/05/17/project-euler-21/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/05/17/project-euler-21/';
         var disqus_script = 'embed.js';
       
     (function () {
