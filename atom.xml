@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-20T12:52:01+08:00</updated>
+  <updated>2013-05-20T12:54:41+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -36,10 +36,10 @@
 
 <blockquote>
 
-<p>The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^10\) = 10405071317. 
+<p>The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^_{10}\) = 10405071317. 
 </p>
 <p>
-Find the last ten digits of the series, $1<sup>1</sup> + \(2^2\) + \(3^3\) + &hellip; + \(1000^1000\).
+Find the last ten digits of the series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(1000^_{1000}\).
 </p>
 </blockquote>
 
@@ -75,7 +75,7 @@ Source:<a href="http://sdrv.ms/14mgROV">C++</a>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[project-euler-22]]></title>
+    <title type="html"><![CDATA[project euler problem 22]]></title>
     <link href="http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/"/>
     <updated>2013-05-19T14:47:00+08:00</updated>
     <id>http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22</id>
