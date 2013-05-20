@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 6 - eBash</title>
+  <title>project euler problem 48 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem The sum of the squares of the first ten natural numbers is, 12 + 22 + &hellip; + 102 = 385 &hellip;">
+3 Answer 1 Problem The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^10\) = 10405071317. Find the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +133,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 6</h1>
+      <h1 class="entry-title">Project Euler Problem 48</h1>
     
     
       <p class="meta">
@@ -149,7 +149,7 @@
   
 
 
-<time datetime="2013-04-29T23:58:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
+<time datetime="2013-05-20T00:10:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -176,22 +176,10 @@
 
 <blockquote>
 
-<p>The sum of the squares of the first ten natural numbers is,
+<p>The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^10\) = 10405071317. 
 </p>
 <p>
-1<sup>2</sup> + 2<sup>2</sup> + &hellip; + 10<sup>2</sup> = 385
-</p>
-<p>
-The square of the sum of the first ten natural numbers is,
-</p>
-<p>
-(1 + 2 + &hellip; + 10)<sup>2</sup> = 55<sup>2</sup> = 3025
-</p>
-<p>
-Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025  385 = 2640.
-</p>
-<p>
-Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+Find the last ten digits of the series, $1<sup>1</sup> + \(2^2\) + \(3^3\) + &hellip; + \(1000^1000\).
 </p>
 </blockquote>
 
@@ -204,17 +192,8 @@ Find the difference between the sum of the squares of the first one hundred natu
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>可以直接依定义计算1<sup>2</sup> + 2<sup>2</sup> + &hellip; + n<sup>2</sup>,(1 + 2 + &hellip; + n)<sup>2</sup> 再相减，或者利用简单的初等数学:
-</p>
-
-
-\begin{eqnarray}
-\sum_{i＝1}^na_{i} = \frac{(1+n) n}{2} 
-\end{eqnarray}
-\begin{eqnarray}
-\sum_{i＝1}^n a^2_i = \frac{(2n+1)(n+1)n}{6}
-\end{eqnarray}
-</div>
+<p>对于直接大数据操作的,直接运算即可,不支持的只要对结果用模取最后10位进行操作即可.
+</p></div>
 
 </div>
 
@@ -222,11 +201,13 @@ Find the difference between the sum of the squares of the first one hundred natu
 <h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>25164150
+<p>  9110846700
 </p>
 <p>
-Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
+Source:<a href="http://sdrv.ms/14mgROV">C++</a>
 </p>
+
+
 
 </div>
 </div>
@@ -252,7 +233,7 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
   
 
 
-<time datetime="2013-04-29T23:58:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
+<time datetime="2013-05-20T00:10:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -266,7 +247,7 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/" >Tweet</a>
   
   
   
@@ -275,10 +256,8 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/04/29/project-euler-2/" title="Previous Post: project euler problem 2">&laquo; project euler problem 2</a>
+        <a class="basic-alignment left" href="/blog/2013/05/19/project-euler-22/" title="Previous Post: project-euler-22">&laquo; project-euler-22</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/30/project-euler-5/" title="Next Post: project euler problem 5">project euler problem 5 &raquo;</a>
       
     </p>
   </footer>
@@ -350,8 +329,8 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/';
-        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/';
         var disqus_script = 'embed.js';
       
     (function () {

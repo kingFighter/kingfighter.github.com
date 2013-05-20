@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 6 - eBash</title>
+  <title>project-euler-22 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem The sum of the squares of the first ten natural numbers is, 12 + 22 + &hellip; + 102 = 385 &hellip;">
+3 Answer 1 Problem Using [[][names.txt]] (right click and &#8216;Save Link/Target As&hellip;&#8217;), a 46K &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +133,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 6</h1>
+      <h1 class="entry-title">Project-euler-22</h1>
     
     
       <p class="meta">
@@ -149,7 +149,7 @@
   
 
 
-<time datetime="2013-04-29T23:58:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
+<time datetime="2013-05-19T14:47:00+08:00" pubdate data-updated="true">May 19<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -176,22 +176,13 @@
 
 <blockquote>
 
-<p>The sum of the squares of the first ten natural numbers is,
+<p>Using [[][names.txt]] (right click and &#8216;Save Link/Target As&hellip;&#8217;), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
 </p>
 <p>
-1<sup>2</sup> + 2<sup>2</sup> + &hellip; + 10<sup>2</sup> = 385
+For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938  53 = 49714.
 </p>
 <p>
-The square of the sum of the first ten natural numbers is,
-</p>
-<p>
-(1 + 2 + &hellip; + 10)<sup>2</sup> = 55<sup>2</sup> = 3025
-</p>
-<p>
-Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025  385 = 2640.
-</p>
-<p>
-Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+What is the total of all the name scores in the file?
 </p>
 </blockquote>
 
@@ -204,17 +195,8 @@ Find the difference between the sum of the squares of the first one hundred natu
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>可以直接依定义计算1<sup>2</sup> + 2<sup>2</sup> + &hellip; + n<sup>2</sup>,(1 + 2 + &hellip; + n)<sup>2</sup> 再相减，或者利用简单的初等数学:
-</p>
-
-
-\begin{eqnarray}
-\sum_{i＝1}^na_{i} = \frac{(1+n) n}{2} 
-\end{eqnarray}
-\begin{eqnarray}
-\sum_{i＝1}^n a^2_i = \frac{(2n+1)(n+1)n}{6}
-\end{eqnarray}
-</div>
+<p>没什么好说的,先读入数据,然后排序,最后进行计算,效率关键在于排序.
+</p></div>
 
 </div>
 
@@ -222,11 +204,13 @@ Find the difference between the sum of the squares of the first one hundred natu
 <h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>25164150
+<p>  871198282
 </p>
 <p>
-Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
+Source:<a href="http://sdrv.ms/14mgHHl">C++</a>
 </p>
+
+
 
 </div>
 </div>
@@ -252,7 +236,7 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
   
 
 
-<time datetime="2013-04-29T23:58:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
+<time datetime="2013-05-19T14:47:00+08:00" pubdate data-updated="true">May 19<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -266,7 +250,7 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/" >Tweet</a>
   
   
   
@@ -275,10 +259,10 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/04/29/project-euler-2/" title="Previous Post: project euler problem 2">&laquo; project euler problem 2</a>
+        <a class="basic-alignment left" href="/blog/2013/05/17/project-euler-21/" title="Previous Post: project euler problem 21">&laquo; project euler problem 21</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/04/30/project-euler-5/" title="Next Post: project euler problem 5">project euler problem 5 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/05/20/project-euler-48/" title="Next Post: project euler problem 48">project euler problem 48 &raquo;</a>
       
     </p>
   </footer>
@@ -350,8 +334,8 @@ Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/';
-        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/';
         var disqus_script = 'embed.js';
       
     (function () {

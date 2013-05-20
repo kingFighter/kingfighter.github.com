@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-17T18:29:28+08:00</updated>
+  <updated>2013-05-20T12:52:01+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,153 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 48]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/"/>
+    <updated>2013-05-20T00:10:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^10\) = 10405071317. 
+</p>
+<p>
+Find the last ten digits of the series, $1<sup>1</sup> + \(2^2\) + \(3^3\) + &hellip; + \(1000^1000\).
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>对于直接大数据操作的,直接运算即可,不支持的只要对结果用模取最后10位进行操作即可.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  9110846700
+</p>
+<p>
+Source:<a href="http://sdrv.ms/14mgROV">C++</a>
+</p>
+
+
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[project-euler-22]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/"/>
+    <updated>2013-05-19T14:47:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>Using [[][names.txt]] (right click and 'Save Link/Target As&hellip;'), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+</p>
+<p>
+For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938  53 = 49714.
+</p>
+<p>
+What is the total of all the name scores in the file?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>没什么好说的,先读入数据,然后排序,最后进行计算,效率关键在于排序.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  871198282
+</p>
+<p>
+Source:<a href="http://sdrv.ms/14mgHHl">C++</a>
+</p>
+
+
+
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 21]]></title>
@@ -447,194 +594,6 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 </p>
 <p>
 Source:<a href="http://sdrv.ms/12afIbb">C++</a>
-</p>
-
-
-
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 15]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/05/04/project-euler-15/"/>
-    <updated>2013-05-04T17:19:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/05/04/project-euler-15</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>Starting in the top left corner of a 2*2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
-</p>
-<p>
-<img src="http://projecteuler.net/project/images/p_015.gif"  alt="http://projecteuler.net/project/images/p_015.gif" />
-</p>
-<p>
-How many such routes are there through a 20*20 grid?
-</p>
-
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>设左上角坐标为(0,0),右下角坐标为(n,n),则有
-</p>
-<p>
-递归式:
-</p>
-<p>
-path(i, j) = path(i-1, j) + path(i, j-1)
-</p>
-<p>
-因为只能向右或向下运动，故处于某点(i,j)时的路径数为与此点相邻的(i-1,j)和(i,j-1)路径数之和.
-</p>
-<p>
-递归终止条件为当点位于最右(最下)时，其路径数是唯一的,只能一直向下（向右),即path(n,i) = 1, path(i,n) = 1
-</p>
-<p>
-从数学的角度看,只需要用到高中的排列组合.从源到目的地共需要移动n + n步,求其路径数即求哪些步骤向右哪些步骤向下，即：
-</p>
-<p>
-path = \(C_{2n}^{n}\)
-</p>
-<p>
-当然对于a*b的格子路径数也是同样的做法
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  137846528820
-</p>
-<p>
-Source:<a href="http://sdrv.ms/11KEkGY">C++</a>
-</p>
-
-
-
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 25]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-25/"/>
-    <updated>2013-04-30T14:02:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-25</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>The Fibonacci sequence is defined by the recurrence relation:
-</p>
-<p>
-\(F_{n}\) = \(F_{n-1}\) + \(F_{n-2}\) , where \(F_1\) = 1 and \(F_2\) = 1.
-Hence the first 12 terms will be:
-</p>
-<p>
-\(F_1\) = 1 <br/>
-\(F_2\) = 1 <br/>
-\(F_3\) = 2 <br/>
-\(F_4\) = 3 <br/>
-\(F_5\) = 5 <br/>
-\(F_6\) = 8 <br/>
-\(F_7\) = 13 <br/>
-\(F_8\) = 21 <br/>
-\(F_9\) = 34 <br/>
-\(F_{10}\) = 55 <br/>
-\(F_{11}\) = 89 <br/>
-\(F_{12}\) = 144 <br/>
-The 12th term, \(F_{12}\) , is the first term to contain three digits.
-</p>
-<p>
-What is the first term in the Fibonacci sequence to contain 1000 digits?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>没什么好说的,大数据处理
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  4782
-</p>
-<p>
-Source:<a href="http://sdrv.ms/ZZ3rEu">C++</a>
 </p>
 
 

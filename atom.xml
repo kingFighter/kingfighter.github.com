@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-17T18:29:28+08:00</updated>
+  <updated>2013-05-20T12:52:01+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,131 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 48]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48/"/>
+    <updated>2013-05-20T00:10:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-48</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^10\) = 10405071317. 
+</p>
+<p>
+Find the last ten digits of the series, $1<sup>1</sup> + \(2^2\) + \(3^3\) + &hellip; + \(1000^1000\).
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>对于直接大数据操作的,直接运算即可,不支持的只要对结果用模取最后10位进行操作即可.
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  9110846700
+</p>
+<p>
+Source:<a href="http://sdrv.ms/14mgROV">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[project-euler-22]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22/"/>
+    <updated>2013-05-19T14:47:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/19/project-euler-22</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>Using [[][names.txt]] (right click and &#8216;Save Link/Target As&hellip;&#8217;), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+</p>
+<p>
+For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938  53 = 49714.
+</p>
+<p>
+What is the total of all the name scores in the file?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>没什么好说的,先读入数据,然后排序,最后进行计算,效率关键在于排序.
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  871198282
+</p>
+<p>
+Source:<a href="http://sdrv.ms/14mgHHl">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 21]]></title>
@@ -118,30 +243,6 @@ Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
 </div>
 </div>
 ]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[how to read a book]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/05/14/how-to-read-a-book/"/>
-    <updated>2013-05-14T23:17:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/05/14/how-to-read-a-book</id>
-    <content type="html"><![CDATA[</p><blockquote>
-
-<p>阅读越主动，效果越好
-</p>
-</blockquote>
-
-
-<p>
-理清自己阅读的目标:为获得资讯而读，以及为求得理解而读
-</p>
-<p>
-思考只是主动阅读的一部分
-</p>
-<p>
-所谓阅读速度，理想上来说，不只是要能读得快，还要能用不同的速度来阅读—要知道什么时候用
-什么样的速度是恰当的
-</p>]]></content>
   </entry>
   
   <entry>
@@ -1654,86 +1755,6 @@ Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
 </p>
 
 
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 6]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6/"/>
-    <updated>2013-04-29T23:58:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/29/project-euler-6</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>The sum of the squares of the first ten natural numbers is,
-</p>
-<p>
-1<sup>2</sup> + 2<sup>2</sup> + &hellip; + 10<sup>2</sup> = 385
-</p>
-<p>
-The square of the sum of the first ten natural numbers is,
-</p>
-<p>
-(1 + 2 + &hellip; + 10)<sup>2</sup> = 55<sup>2</sup> = 3025
-</p>
-<p>
-Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025  385 = 2640.
-</p>
-<p>
-Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>可以直接依定义计算1<sup>2</sup> + 2<sup>2</sup> + &hellip; + n<sup>2</sup>,(1 + 2 + &hellip; + n)<sup>2</sup> 再相减，或者利用简单的初等数学:
-</p>
-
-
-\begin{eqnarray}
-\sum_{i＝1}^na_{i} = \frac{(1+n) n}{2} 
-\end{eqnarray}
-\begin{eqnarray}
-\sum_{i＝1}^n a^2_i = \frac{(2n+1)(n+1)n}{6}
-\end{eqnarray}
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>25164150
-</p>
-<p>
-Source:<a href="http://sdrv.ms/10nRtmY">C++</a>
-</p>
 
 </div>
 </div>
