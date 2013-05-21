@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-20T12:56:34+08:00</updated>
+  <updated>2013-05-21T10:01:25+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 19]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/"/>
+    <updated>2013-05-20T16:56:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>  You are given the following information, but you may prefer to do some research for yourself.
+</p>
+<p>
+1 Jan 1900 was a Monday.<br/>
+Thirty days has September,<br/>
+April, June and November.<br/>
+All the rest have thirty-one,<br/>
+Saving February alone,<br/>
+Which has twenty-eight, rain or shine.<br/>
+And on leap years, twenty-nine.<br/>
+A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+</p>
+<p>
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  很直接的,查下表1901/1/1是星期二,此时设表示周几的变量numOfDay = 2,那么1901/2/1是周几？只要numOfDay加上一月份的天数31,再模7得5知为周五.依此法检测1901~2000每月第一天是周几。注意:别忘了2月份的天数需要是否闰年的判断.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  171
+</p>
+<p>  
+Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
+</p>
+
+
+
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 48]]></title>
@@ -486,114 +568,6 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
 </p>
 <p>
 Source:<a href="http://sdrv.ms/18WJuTc">C++迭代</a> <a href="http://sdrv.ms/18WJyCn">C++递归</a>
-</p>
-
-
-
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 17]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/05/05/project-euler-17/"/>
-    <updated>2013-05-05T11:09:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/05/05/project-euler-17</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
-</p>
-<p>
-If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
-</p>
-
-<p>
-NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>我们知道&lt;1000的都可由,one,two&hellip;ninteen,twenty,thirty&hellip;ninety,hundred,and 这些英文字母表达出来，并将one~nineteen的字母数保存在数组 <code>a[19]={3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8}</code> 中，twenty,thirty..ninety的字母数保存在数组 <code>b[8]＝{6, 6, 5, 5, 5, 7, 6, 6}</code> 中，简单分类计算sum：
-</p>
-<ol>
-<li>\(i\in[1,20)\) <br/>
-            sum = sum+ a[i - 1]
-</li>
-<li>\(i\in[20,100)\)
-<ol>
-<li>sum = sum + b[i / 10 - 2]   \(i\in\) {20,30,..90}
-</li>
-<li>sum = sum + b[i / 10 - 2] + a[i % 10 - 1] \(i\in\) {21,22,&hellip;99}
-</li>
-</ol>
-
-</li>
-<li>\(i\in[100,1000)\)
-<ol>
-<li>sum = sum + a[i / 100 - 1] + len("hundred")  \(i\in\) {100,200,300..900}
-</li>
-<li>sum = sum + a[i / 100 - 1] + len("hundred") + len("and") + a[i % 100 - 1]; \(i\in\) {101-119,201-219,&hellip;901-919}
-</li>
-<li>sum = sum + a[i / 100 - 1] + len("hundred") + len("and") + b[i / 10 % 10 - 2]; \(i\in\) {120,130,140..990}
-</li>
-<li>sum = sum + a[i / 100 - 1] + len("hundred") + len("and") + a[i % 10 - 1] + b[i / 10 % 10 - 2]; \(i\in\) {121,122&hellip;999}
-</li>
-</ol>
-
-</li>
-<li>\(i = 1000\) <br/>
-   sum = sum + len("one") + len("thousand");
-</li>
-</ol>
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  21124
-</p>
-<p>
-Source:<a href="http://sdrv.ms/12afIbb">C++</a>
 </p>
 
 

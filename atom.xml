@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-20T12:56:34+08:00</updated>
+  <updated>2013-05-21T10:01:25+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 19]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/"/>
+    <updated>2013-05-20T16:56:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>  You are given the following information, but you may prefer to do some research for yourself.
+</p>
+<p>
+1 Jan 1900 was a Monday.<br/>
+Thirty days has September,<br/>
+April, June and November.<br/>
+All the rest have thirty-one,<br/>
+Saving February alone,<br/>
+Which has twenty-eight, rain or shine.<br/>
+And on leap years, twenty-nine.<br/>
+A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+</p>
+<p>
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  很直接的,查下表1901/1/1是星期二,此时设表示周几的变量numOfDay = 2,那么1901/2/1是周几？只要numOfDay加上一月份的天数31,再模7得5知为周五.依此法检测1901~2000每月第一天是周几。注意:别忘了2月份的天数需要是否闰年的判断.
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  171
+</p>
+<p>  
+Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 48]]></title>
@@ -1678,80 +1749,6 @@ What is the largest prime factor of the number 600851475143?
 </p>
 <p>
 Source:<a href="http://sdrv.ms/11y8dKF">C++</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 5]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5/"/>
-    <updated>2013-04-30T10:18:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-5</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-</p>
-<p>
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>可以直接依题意解决，或者稍微用点数学的知识.
-</p>
-<p>
-我们知道任何大于1的自然数n可以用：
-</p>
-
-
-\(n = p_{i}^{a_{i}}p_{i+1}^{a_{i+1}}&#8230;p_{j}^{a_{j}}\)
-
-<p>
-其中 \(p_{i}\) 为素数, \(a_i\) 为幂次.
-</p>
-<p>
-我们只要找出 k = 20时，其各素数的最高次冥，然后相乘即可.
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  232792560
-</p>
-<p>
-Source:<a href="http://sdrv.ms/YidZ6r">C++</a>
 </p>
 
 
