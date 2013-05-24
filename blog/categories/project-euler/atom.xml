@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-24T13:12:56+08:00</updated>
+  <updated>2013-05-24T13:15:16+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -64,9 +64,19 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
 
 <p>  看到排列组合的问题,立马就想到了用排列组合的数学方法来求解。<br/>
   只需要高中数学的知识即可,计算过程如下:<br/>
-  9!*2 &lt;＝ 1000000 &lt; 9!*3 =&gt;最高位为从小到大排列未被使用的第三位数字2; 1000000 – 9!*2 = 274240<br/>
-  8!*6 &lt;＝ 27420 &lt; 8!*7 =&gt;现在数字2已经被使用,故从小到大排列未被使用的第七位数字为7; 27420 – 241920 = 32320<br/>
+  9!*2 &lt;＝ 1000000 &lt; 9!*3 <br/>
+  最高位为从小到大排列未被使用的第三位数字2<br/>
+  1000000 – 9!*2 = 274240
+</p>
+<p>
+  8!*6 &lt;＝ 27420 &lt; 8!*7<br/>
+  现在数字2已经被使用,故从小到大排列未被使用的第七位数字为7<br/>
+  27420 – 241920 = 32320
+</p>
+<p>
   &hellip;..
+</p>
+<p>
   按这个过程计算出来的为2783915604,但这并不是真正所求的,而是所求序列的下一个。很容易知道2783915604序列的前一个数为2783915460
 </p></div>
 
