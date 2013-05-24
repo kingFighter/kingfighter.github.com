@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-22T09:16:42+08:00</updated>
+  <updated>2013-05-24T13:12:56+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 24]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/23/project-euler-24/"/>
+    <updated>2013-05-23T23:10:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/23/project-euler-24</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:
+</p>
+<p>
+012   021   102   120   201   210
+</p>
+<p>
+What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  看到排列组合的问题,立马就想到了用排列组合的数学方法来求解。<br/>
+  只需要高中数学的知识即可,计算过程如下:<br/>
+  9!*2 &lt;＝ 1000000 &lt; 9!*3 =&gt;最高位为从小到大排列未被使用的第三位数字2; 1000000 – 9!*2 = 274240<br/>
+  8!*6 &lt;＝ 27420 &lt; 8!*7 =&gt;现在数字2已经被使用,故从小到大排列未被使用的第七位数字为7; 27420 – 241920 = 32320<br/>
+  &hellip;..
+  按这个过程计算出来的为2783915604,但这并不是真正所求的,而是所求序列的下一个。很容易知道2783915604序列的前一个数为2783915460
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  2783915460  
+</p>
+<p>
+Source:<a href="http://sdrv.ms/14Fp1Cl">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 28]]></title>
@@ -1700,67 +1769,6 @@ What is the 10 001st prime number?
 </p>
 <p>
 Source:<a href="http://sdrv.ms/ZSHxpw">C++</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 4]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-4/"/>
-    <updated>2013-04-30T11:20:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-4</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 99.
-</p>
-<p>
-Find the largest palindrome made from the product of two 3-digit numbers.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>没什么好说的
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  906609
-</p>
-<p>
-Source:<a href="http://sdrv.ms/13HJlSk">C++</a>
 </p>
 
 
