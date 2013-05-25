@@ -11,7 +11,7 @@
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem A permutation is an ordered arrangement of objects. For example, 3124 is one possible &hellip;">
+3 Answer 1 Problem Surprisingly there are only three numbers that can be written as the sum of fourth powers &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -130,6 +130,118 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/24/project-euler-30/">Project Euler Problem 30</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-24T22:20:00+08:00" pubdate data-updated="true">May 24<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/24/project-euler-30/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
+</p>
+<p>
+1634 = \(1^4\) + \(6^4\) + \(3^4\) + \(4^4\)
+8208 = \(8^4\) + \(2^4\) + \(0^4\) + \(8^4\)
+9474 = \(9^4\) + \(4^4\) + \(7^4\) + \(4^4\)
+</p>
+<p>
+As 1 = \(1^4\) is not a sum it is not included.
+</p>
+<p>
+The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+</p>
+<p>
+Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  很直接,关键是找出上界.个位数是不符合题意的。我们检查多少位时其位数上的值的五次方的和不能表示相应的位数.我们可以看到,到7位数时,其最大就只能表示413343,更不用说8位,9位等了.故上界为354294
+</p>
+<p>  
+  \begin{equation}
+  9^5 + 9^5 = 118098 &#92;
+  9^5 + 9^5 + 9^5 = 177147&#92;
+  9^5 + 9^5 + 9^5 + 9^5 = 236196 &#92;
+  9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 295245&#92;
+  9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 354294&#92;
+  9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 413343&#92;
+  \end{equation}
+
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  443839
+</p>
+<p>
+Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
+</p>
+
+
+
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1245,115 +1357,6 @@ Source:<a href="http://sdrv.ms/11KEkGY">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/30/project-euler-25/">Project Euler Problem 25</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-30T14:02:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/04/30/project-euler-25/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>The Fibonacci sequence is defined by the recurrence relation:
-</p>
-<p>
-\(F_{n}\) = \(F_{n-1}\) + \(F_{n-2}\) , where \(F_1\) = 1 and \(F_2\) = 1.
-Hence the first 12 terms will be:
-</p>
-<p>
-\(F_1\) = 1 <br/>
-\(F_2\) = 1 <br/>
-\(F_3\) = 2 <br/>
-\(F_4\) = 3 <br/>
-\(F_5\) = 5 <br/>
-\(F_6\) = 8 <br/>
-\(F_7\) = 13 <br/>
-\(F_8\) = 21 <br/>
-\(F_9\) = 34 <br/>
-\(F_{10}\) = 55 <br/>
-\(F_{11}\) = 89 <br/>
-\(F_{12}\) = 144 <br/>
-The 12th term, \(F_{12}\) , is the first term to contain three digits.
-</p>
-<p>
-What is the first term in the Fibonacci sequence to contain 1000 digits?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>没什么好说的,大数据处理
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  4782
-</p>
-<p>
-Source:<a href="http://sdrv.ms/ZZ3rEu">C++</a>
-</p>
-
-
-
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1367,6 +1370,10 @@ Source:<a href="http://sdrv.ms/ZZ3rEu">C++</a>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/24/project-euler-30/">project euler problem 30</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/23/project-euler-24/">project euler problem 24</a>
@@ -1384,17 +1391,13 @@ Source:<a href="http://sdrv.ms/ZZ3rEu">C++</a>
         <a href="/blog/2013/05/20/project-euler-48/">project euler problem 48</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/05/19/project-euler-22/">project euler problem 22</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (26)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (27)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
 
   </ul>

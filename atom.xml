@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-24T13:15:16+08:00</updated>
+  <updated>2013-05-25T09:20:02+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 30]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/24/project-euler-30/"/>
+    <updated>2013-05-24T22:20:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/24/project-euler-30</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
+</p>
+<p>
+1634 = \(1^4\) + \(6^4\) + \(3^4\) + \(4^4\)
+8208 = \(8^4\) + \(2^4\) + \(0^4\) + \(8^4\)
+9474 = \(9^4\) + \(4^4\) + \(7^4\) + \(4^4\)
+</p>
+<p>
+As 1 = \(1^4\) is not a sum it is not included.
+</p>
+<p>
+The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+</p>
+<p>
+Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  很直接,关键是找出上界.个位数是不符合题意的。我们检查多少位时其位数上的值的五次方的和不能表示相应的位数.我们可以看到,到7位数时,其最大就只能表示413343,更不用说8位,9位等了.故上界为354294
+</p>
+<p>  
+  \begin{equation}
+  9^5 + 9^5 = 118098 &#92;
+  9^5 + 9^5 + 9^5 = 177147&#92;
+  9^5 + 9^5 + 9^5 + 9^5 = 236196 &#92;
+  9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 295245&#92;
+  9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 354294&#92;
+  9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 413343&#92;
+  \end{equation}
+
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  443839
+</p>
+<p>
+Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
+</p>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 24]]></title>
@@ -1718,67 +1801,6 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
 </p>
 <p>
 Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 7]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-7/"/>
-    <updated>2013-04-30T11:25:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-7</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-</p>
-<p>
-What is the 10 001st prime number?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>找素数，没什么好说的，可以用 <a href="http://zh.wikipedia.org/wiki/埃拉托斯特尼筛法">爱氏筛</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  104743
-</p>
-<p>
-Source:<a href="http://sdrv.ms/ZSHxpw">C++</a>
 </p>
 
 
