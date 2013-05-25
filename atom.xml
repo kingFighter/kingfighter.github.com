@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-25T10:23:48+08:00</updated>
+  <updated>2013-05-25T10:26:37+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -70,10 +70,20 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 <p>  
   \begin{eqnarray*}
   9^5 + 9^5 = 118098 &#92;
+  \end{eqnarray*}
+  \begin{eqnarray*}
   9^5 + 9^5 + 9^5 = 177147 &#92;
+  \end{eqnarray*}
+  \begin{eqnarray*}
   9^5 + 9^5 + 9^5 + 9^5 = 236196 &#92;
+  \end{eqnarray*}
+  \begin{eqnarray*}
   9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 295245 &#92;
+  \end{eqnarray*}
+  \begin{eqnarray*}
   9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 354294 &#92;
+  \end{eqnarray*}
+  \begin{eqnarray*}
   9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 413343 &#92;
   \end{eqnarray*}
 
