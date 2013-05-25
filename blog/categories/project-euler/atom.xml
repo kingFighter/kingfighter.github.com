@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-25T10:18:17+08:00</updated>
+  <updated>2013-05-25T10:23:48+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -41,13 +41,15 @@
 <blockquote>
 
 <p>Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
-</p>
-<p>
-1634 = \(1^4\) + \(6^4\) + \(3^4\) + \(4^4\) <br/>
-8208 = \(8^4\) + \(2^4\) + \(0^4\) + \(8^4\) <br/>
-9474 = \(9^4\) + \(4^4\) + \(7^4\) + \(4^4\) <br/>
-</p>
-<p>
+\begin{eqnarray*}
+1634 = 1^4 +6^4 + 3^4 + 4^4 \\
+\end{eqnarray*}
+\begin{eqnarray*}
+8208 = 8^4 + 2^4 + 0^4 + 8^4 \\
+\end{eqnarray*}
+\begin{eqnarray*}
+9474 = 9^4 + 4^4 + 7^4 + 4^4 \\
+\end{eqnarray*}
 As 1 = \(1^4\) is not a sum it is not included.
 </p>
 <p>
