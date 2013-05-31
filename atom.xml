@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-05-25T10:26:37+08:00</updated>
+  <updated>2013-05-31T09:59:18+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -569,6 +569,62 @@ Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
 </div>
 </div>
 ]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[如何阅读一本书]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/05/14/how-to-read-a-book/"/>
+    <updated>2013-05-14T23:17:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/05/14/how-to-read-a-book</id>
+    <content type="html"><![CDATA[做事要讲究方法,读书也是如此.自己虽然读过的书不少,但感觉都没有内化.于是找到了这本书<a href="http://book.douban.com/subject/1013208/">如何阅读一本书</a> (HOW TO READ A BOOK)
+</p>
+<p>
+本书的作者是莫提默·J. 艾德勒,看简介应该是很有学问的人.他系统地介绍了如何阅读一本书.总体行文可以说啰嗦,好听点叫细致,其大体方法从目录大纲即可得知.
+</p>
+<p>
+就我个人而言,虽然从来没有系统化地总结过自己的阅读方法,但大体上与本书作者不谋而合。<br/>
+本书将阅读分为四个层次:<br/>
+</p><ol>
+<li>基础阅读
+</li>
+<li>检视阅读
+</li>
+<li>分析阅读
+</li>
+<li>主题阅读
+</li>
+</ol>
+
+<p>简单地说,基础阅读，大概为基础识字等准备阶段,识字理解基本意思即可;检视阅读为略读或粗读,分析阅读为阅读理解,主题阅读则为多本书对某一主题进行分析比较.<br/>
+我认为,作为高中生至少应该掌握到分析阅读,大学生至少应该掌握所有的层次.
+</p>
+<p>
+这本书于我的价值最大的倒不是所谓的阅读技巧(我已经基本掌握,只是没有系统化的去理解),而是作者的一些理念.
+</p>
+<blockquote>
+
+<p>阅读越主动，效果越好
+</p>
+</blockquote>
+
+
+<p>
+阅读心不在焉,神游其外,陷入茫茫之中,不知书中所言,对内容逆来顺受,当然不能希望能有多大的收获了.
+</p>
+<blockquote>
+
+<p>所谓阅读速度，理想上来说，不只是要能读得快，还要能用不同的速度来阅读—要知道什么时候用
+什么样的速度是恰当的
+</p>
+</blockquote>
+
+
+<p>
+现在呀,凡事都求快,社会确实浮躁了些。我常常看到一些人晒出自己一年读了几百本书,然后对比自己一年的阅读量,当真是十分的励志！可惜我没法询问当事人阅读的效果.快当然是好,但过犹不及.一些难懂,经典的书籍是需要慢去理解的,一些片段是需要慢去欣赏的.因为就没必要一味的追求数量.当今是信息大爆炸的时代,固然对信息的快速处理(快速阅读)的技巧十分重要,但对信息的筛选,有效的处理却更重要,现在可没人能穷尽所有书籍了.我秉持着一种信念&#8221;精优于胜&#8221;,一般情况下泛泛而读一万本也比不上读精一本书.
+</p>
+<p>
+不管对于有经验的还是缺乏阅读技巧的读者,这本书还是有所价值的.
+</p>]]></content>
   </entry>
   
   <entry>
@@ -1733,86 +1789,6 @@ b < \frac{s-a}{2}
 </p>
 <p>
 Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 8]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8/"/>
-    <updated>2013-04-30T11:42:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/04/30/project-euler-8</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>Find the greatest product of five consecutive digits in the 1000-digit number.
-</p>
-<p>
-73167176531330624919225119674426574742355349194934
-96983520312774506326239578318016984801869478851843
-85861560789112949495459501737958331952853208805511
-12540698747158523863050715693290963295227443043557
-66896648950445244523161731856403098711121722383113
-62229893423380308135336276614282806444486645238749
-30358907296290491560440772390713810515859307960866
-70172427121883998797908792274921901699720888093776
-65727333001053367881220235421809751254540594752243
-52584907711670556013604839586446706324415722155397
-53697817977846174064955149290862569321978468622482
-83972241375657056057490261407972968652414535100474
-82166370484403199890008895243450658541227588666881
-16427171479924442928230863465674813919123162824586
-17866458359124566529476545682848912883142607690042
-24219022671055626321111109370544217506941658960408
-07198403850962455444362981230987879927244284909188
-84580156166097919133875499200524063689912560717606
-05886116467109405077541002256983155200055935729725
-71636269561882670428252483600823257530420752963450
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>没什么好说的
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  40824
-</p>
-<p>
-Source:<a href="http://sdrv.ms/10QjKtG">C++</a>
 </p>
 
 
