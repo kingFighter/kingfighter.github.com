@@ -10,8 +10,10 @@
 
   
   <meta name="description" content="Table of Contents 1 Problem
-2 Solution
-3 Answer 1 Problem If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there &hellip;">
+2 Solution 2.1 Brute Force
+2.2 递归 2.2.1 分析
+2.2.2 例子 2.3 Bottom-Up 2.3.1 分析
+2.3.2 例子 3 Answer 1 Problem By starting at &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -130,6 +132,242 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/06/project-euler-18/">Project Euler Problem 18</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-06T23:38:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/06/project-euler-18/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Brute Force</a></li>
+<li><a href="#sec-2-2">2.2 递归</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1 分析</a></li>
+<li><a href="#sec-2-2-2">2.2.2 例子</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">2.3 Bottom-Up</a>
+<ul>
+<li><a href="#sec-2-3-1">2.3.1 分析</a></li>
+<li><a href="#sec-2-3-2">2.3.2 例子</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+</p>
+
+
+<p style="text-align:center;font-family:courier new;font-size:12pt;"><span style="color:#ff0000;"><b>3</b></span><br />
+<span style="color:#ff0000;"><b>7</b></span> 4<br />
+2 <span style="color:#ff0000;"><b>4</b></span> 6<br />
+8 5 <span style="color:#ff0000;"><b>9</b></span> 3</p>
+
+<p>
+That is, 3 + 7 + 4 + 9 = 23.
+</p>
+<p>
+Find the maximum total from top to bottom of the triangle below:
+<p style="text-align:center;font-family:courier new;">75<br />
+95 64<br />
+17 47 82<br />
+18 35 87 10<br />
+20 04 82 47 65<br />
+19 01 23 75 03 34<br />
+88 02 77 73 07 63 67<br />
+99 65 04 28 06 16 70 92<br />
+41 41 26 56 83 40 80 70 33<br />
+41 48 72 33 47 32 37 16 94 29<br />
+53 71 44 65 25 43 91 52 97 51 14<br />
+70 11 33 28 77 73 17 78 39 68 17 57<br />
+91 71 52 38 17 14 91 43 58 50 27 29 48<br />
+63 66 04 68 89 53 67 30 73 16 69 87 40 31<br />
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</p>
+
+NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Brute Force</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>直接的方法就是brute force,但对于大数据量时速度会很慢.<br/>
+对于n层高,共有 \(\frac{(n+1)n}{2}\) 个数字,由归纳法易知需要穷尽 \(2^{n-1}\) 条路径,每条路径上有n个数字，需要 \(\Theta(2^{n-1}n)\) 的时间, 易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则 m = \(\frac{\sqrt{1+8m}-3}{2}\),代入其中即得关于输入个数m的时间复杂度.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 递归</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> 分析</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<p>    \(p_{i}\) 为第i个数字到最末层相邻数字相加最大值, \(a_{i}\) 为第i个数字的值, \(i\in(0,\frac{(n + 1)(n + 2)}{2})\) <br/>
+    题目所求为 \(p_{0}\) 的值，易知 \(p_{0}\) = max(\(p_{1}\), \(p_{2}\)) + \(a_{0}\) , \(p_{1}\) = max(\(p_{3}\), \(p_{4}\)) + \(a_{1}\) ,&hellip;<br/>
+    设共有n层高(从0开始),则对于i层(第 \(\frac{(i + 1)i}{2}\) ~ \(\frac{(i + 1)i}{2} + i\) 个数),以下等式成立:<br/>
+    \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
+    \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
+    对于n层高,其时间复杂度为 \(\Theta(\frac{(n+1)n}{2})\),易知数字总数m = \(\frac{(n + 2)(n + 1)}{2}\) ,则转换知对于输入个数m,其时间复杂度为 \(\Theta(m)\)
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> 例子</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+<p>对于原题中的例子其递归调用过程如下:
+</p>
+<p class="verse">
+\(p_0\) = max(\(p_1\), \(p_2\)) + 3<br/>
+\(p_1\) = max(\(p_3\), \(p_4\)) + 7<br/>
+\(p_3\) = max(\(p_6\), \(p_7\)) + 2<br/>
+\(p_6\) = 8<br/>
+\(p_7\) = 5<br/>
+\(p_3\) = 8 + 2 = 10<br/>
+\(p_4\) = max(\(p_7\), \(p_8\)) + 4<br/>
+\(p_8\) = 9<br/>
+\(p_4\) = 9 + 4 = 13<br/>
+\(p_1\) = 9 + 4 + 7 = 20<br/>
+\(p_2\) = max(\(p_4\), \(p_5\)) + 4<br/>
+\(p_5\) = max(\(p_8\), \(p_9\)) + 6<br/>
+\(p_9\) = 3<br/>
+\(p_5\) = 9 + 6 = 15<br/>
+\(p_2\) = 9 + 6 + 4 = 19<br/>
+\(p_0\) = 9 + 4 + 7 + 3 = 23<br/>
+</p>
+
+
+<p>
+可以近似把所有数字看作一棵树,则为前序遍历,后序计算
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Bottom-Up</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> 分析</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+<p>我们将上述递归算法转换为迭代,过程如下: <br/>
+第n层时, \(p_{j}\) = \(a_{j}\)  j \(\in[\frac{(n + 1)n}{2}\) , \(\frac{(n + 1)n}{2} + n]\) <br/>
+第i层, \(p_{j}\) = max(\(p_{j + i + 1}\), \(p_{j + i + 2}\)) + \(a_{j}\)  j \(\in[\frac{(i + 1)i}{2}\) , \(\frac{(i + 1)i}{2} + i]\) <br/>
+与递归大抵类似.
+</p>
+<p>
+对于输入个数n,其时间复杂度与递归类似为 \(\Theta(n)\), 如果 \(p_i\) 与 \(a_i\) 使用同一数组,则其空间复杂度为 \(\Theta(1)\)
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> 例子</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<p>其计算过程如下:
+</p>
+
+
+<pre class="example">   3                3             3          23
+  7 4             7  4         20   19  
+ 2 4 6    -&gt;    10 13 15   -&gt;           -&gt;  
+8 5 9 3       
+</pre>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  1074
+</p>
+<p>
+Source:<a href="http://sdrv.ms/18WJuTc">C++迭代</a> <a href="http://sdrv.ms/18WJyCn">C++递归</a>
+</p>
+
+
+
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1216,96 +1454,6 @@ Source:<a href="http://sdrv.ms/10QuCrB">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/30/project-euler-10/">Project Euler Problem 10</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-30T13:07:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/04/30/project-euler-10/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-</p>
-<p>
-Find the sum of all the primes below two million.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>求素数,没什么好说的
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  142913828922
-</p>
-<p>
-Source:<a href="http://sdrv.ms/YisQ0E">C++</a>
-</p>
-
-
-
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1323,6 +1471,10 @@ Source:<a href="http://sdrv.ms/YisQ0E">C++</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/08/project-euler-29/">project euler problem 29</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/31/project-euler-67/">project euler problem 67</a>
       </li>
     
@@ -1338,10 +1490,6 @@ Source:<a href="http://sdrv.ms/YisQ0E">C++</a>
         <a href="/blog/2013/05/21/project-euler-28/">project euler problem 28</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/05/20/project-euler-19/">project euler problem 19</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1349,7 +1497,7 @@ Source:<a href="http://sdrv.ms/YisQ0E">C++</a>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (28)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (29)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
 
