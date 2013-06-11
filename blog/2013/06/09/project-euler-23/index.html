@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 19 - eBash</title>
+  <title>project euler problem 23 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem You are given the following information, but you may prefer to do some research for &hellip;">
+3 Answer 1 Problem A perfect number is a number for which the sum of its proper divisors is exactly equal to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-23/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +133,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 19</h1>
+      <h1 class="entry-title">Project Euler Problem 23</h1>
     
     
       <p class="meta">
@@ -149,7 +149,7 @@
   
 
 
-<time datetime="2013-05-20T16:56:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
+<time datetime="2013-06-09T16:21:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -176,20 +176,16 @@
 
 <blockquote>
 
-<p>  You are given the following information, but you may prefer to do some research for yourself.
+<p>  A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
 </p>
 <p>
-1 Jan 1900 was a Monday.<br/>
-Thirty days has September,<br/>
-April, June and November.<br/>
-All the rest have thirty-one,<br/>
-Saving February alone,<br/>
-Which has twenty-eight, rain or shine.<br/>
-And on leap years, twenty-nine.<br/>
-A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.
 </p>
 <p>
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
+</p>
+<p>
+Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 </p>
 </blockquote>
 
@@ -202,8 +198,21 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 <h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>  很直接的,查下表1901/1/1是星期二,此时设表示周几的变量numOfDay = 2,那么1901/2/1是周几？只要numOfDay加上一月份的天数31,再模7得5知为周五.依此法检测1901~2000每月第一天是周几。注意:别忘了2月份的天数需要是否闰年的判断.
-</p></div>
+<p>  上界很明显为28123
+</p>
+<ol>
+<li>计算到上界为止所有数的和,记为sum,并将abundant数保存
+</li>
+<li>将abundant数两两相加,如不大于上界,则将这两数的和记为可以表示为abundant数相加,即不满足题意要求的数
+</li>
+<li>所有可表示为abundant数相加的数其和记为abundantsSum
+</li>
+<li>所求答案即为 sum - abundantsSum
+</li>
+</ol>
+
+
+</div>
 
 </div>
 
@@ -211,15 +220,11 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 <h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>  171
+<p>  4179871
 </p>
-<p>  
-Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
-</p>
-
-
-
-</div>
+<p>
+Source:<a href="http://sdrv.ms/18lliPp">C++</a>
+</p></div>
 </div>
 </div>
 
@@ -243,7 +248,7 @@ Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
   
 
 
-<time datetime="2013-05-20T16:56:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
+<time datetime="2013-06-09T16:21:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -257,7 +262,7 @@ Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-23/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-23/" >Tweet</a>
   
   
   
@@ -266,10 +271,10 @@ Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/05/20/project-euler-48/" title="Previous Post: project euler problem 48">&laquo; project euler problem 48</a>
+        <a class="basic-alignment left" href="/blog/2013/06/08/project-euler-29/" title="Previous Post: project euler problem 29">&laquo; project euler problem 29</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/05/21/project-euler-28/" title="Next Post: project euler problem 28">project euler problem 28 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/06/09/project-euler-34/" title="Next Post: project euler problem 34">project euler problem 34 &raquo;</a>
       
     </p>
   </footer>
@@ -343,8 +348,8 @@ Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/';
-        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/05/20/project-euler-19/';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-23/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-23/';
         var disqus_script = 'embed.js';
       
     (function () {
