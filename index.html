@@ -10,8 +10,8 @@
 
   
   <meta name="description" content="Table of Contents 1 Problem
-2 Solution 2.1 Brute Force
-2.2 Generate 3 Answer 1 Problem The decimal number, 585 = \(1001001001_2\) (binary), is &hellip;">
+2 Solution
+3 Answer 1 Problem Euler discovered the remarkable quadratic formula: n² + n + 41 It turns out that the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -130,6 +130,200 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/14/project-euler-27/">Project Euler Problem 27</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T23:31:00+08:00" pubdate data-updated="true">Jun 14<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/14/project-euler-27/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>Euler discovered the remarkable quadratic formula:
+</p>
+<p>
+n² + n + 41
+</p>
+<p>
+It turns out that the formula will produce 40 primes for the consecutive values n = 0 to 39. However, when n = 40, 402 + 40 + 41 = 40(40 + 1) + 41 is divisible by 41, and certainly when n = 41, 41² + 41 + 41 is clearly divisible by 41.
+</p>
+<p>
+The incredible formula  n² - 79n + 1601 was discovered, which produces 80 primes for the consecutive values n = 0 to 79. The product of the coefficients, -79 and 1601, is -126479.
+</p>
+<p>
+Considering quadratics of the form:
+</p>
+<p>
+n² + an + b, where |a|  1000 and |b|  1000
+</p>
+<p>
+where |n| is the modulus/absolute value of n <br/>
+e.g. |11| = 11 and |-4| = 4 
+</p>
+<p>
+Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p> Brute Force,当然如果n为0时,可知b必为素数.还可以试图代入n = 1等,得出a,b相应性质,减小复杂度
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  -59231
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
+</p></div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/14/project-euler-35/">Project Euler Problem 35</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T22:44:00+08:00" pubdate data-updated="true">Jun 14<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/14/project-euler-35/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>  The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+</p>
+<p>
+There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+</p>
+<p>
+How many circular primes are there below one million?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  brute force,没什么好说的
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  55
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12MpN3F">C++</a>
+</p></div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1010,196 +1204,6 @@ Source:<a href="http://sdrv.ms/10SI5JC">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/20/project-euler-19/">Project Euler Problem 19</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-20T16:56:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/05/20/project-euler-19/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>  You are given the following information, but you may prefer to do some research for yourself.
-</p>
-<p>
-1 Jan 1900 was a Monday.<br/>
-Thirty days has September,<br/>
-April, June and November.<br/>
-All the rest have thirty-one,<br/>
-Saving February alone,<br/>
-Which has twenty-eight, rain or shine.<br/>
-And on leap years, twenty-nine.<br/>
-A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
-</p>
-<p>
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  很直接的,查下表1901/1/1是星期二,此时设表示周几的变量numOfDay = 2,那么1901/2/1是周几？只要numOfDay加上一月份的天数31,再模7得5知为周五.依此法检测1901~2000每月第一天是周几。注意:别忘了2月份的天数需要是否闰年的判断.
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  171
-</p>
-<p>  
-Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
-</p>
-
-
-
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/20/project-euler-48/">Project Euler Problem 48</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-20T00:10:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/05/20/project-euler-48/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>The series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(10^{10}\) = 10405071317. 
-</p>
-<p>
-Find the last ten digits of the series, \(1^1\) + \(2^2\) + \(3^3\) + &hellip; + \(1000^{1000}\).
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>对于直接大数据操作的,直接运算即可,不支持的只要对结果用模取最后10位进行操作即可.
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  9110846700
-</p>
-<p>
-Source:<a href="http://sdrv.ms/14mgROV">C++</a>
-</p>
-
-
-
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1215,6 +1219,14 @@ Source:<a href="http://sdrv.ms/14mgROV">C++</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/14/project-euler-27/">project euler problem 27</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/14/project-euler-35/">project euler problem 35</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/10/project-euler-36/">project euler problem 36</a>
       </li>
     
@@ -1226,14 +1238,6 @@ Source:<a href="http://sdrv.ms/14mgROV">C++</a>
         <a href="/blog/2013/06/09/project-euler-23/">project euler problem 23</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/06/08/project-euler-29/">project euler problem 29</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/31/project-euler-67/">project euler problem 67</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1241,7 +1245,7 @@ Source:<a href="http://sdrv.ms/14mgROV">C++</a>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (32)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (34)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
 

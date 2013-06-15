@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-06-11T08:47:19+08:00</updated>
+  <updated>2013-06-15T11:04:46+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,164 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 27]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/"/>
+    <updated>2013-06-14T23:31:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>Euler discovered the remarkable quadratic formula:
+</p>
+<p>
+n² + n + 41
+</p>
+<p>
+It turns out that the formula will produce 40 primes for the consecutive values n = 0 to 39. However, when n = 40, 402 + 40 + 41 = 40(40 + 1) + 41 is divisible by 41, and certainly when n = 41, 41² + 41 + 41 is clearly divisible by 41.
+</p>
+<p>
+The incredible formula  n² - 79n + 1601 was discovered, which produces 80 primes for the consecutive values n = 0 to 79. The product of the coefficients, -79 and 1601, is -126479.
+</p>
+<p>
+Considering quadratics of the form:
+</p>
+<p>
+n² + an + b, where |a|  1000 and |b|  1000
+</p>
+<p>
+where |n| is the modulus/absolute value of n <br/>
+e.g. |11| = 11 and |-4| = 4 
+</p>
+<p>
+Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p> Brute Force,当然如果n为0时,可知b必为素数.还可以试图代入n = 1等,得出a,b相应性质,减小复杂度
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  -59231
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
+</p></div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 35]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-35/"/>
+    <updated>2013-06-14T22:44:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-35</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>  The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+</p>
+<p>
+There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+</p>
+<p>
+How many circular primes are there below one million?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  brute force,没什么好说的
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  55
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12MpN3F">C++</a>
+</p></div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 36]]></title>
@@ -284,177 +442,6 @@ Find the sum of all the positive integers which cannot be written as the sum of 
 <p>
 Source:<a href="http://sdrv.ms/18lliPp">C++</a>
 </p></div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 29]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/06/08/project-euler-29/"/>
-    <updated>2013-06-08T22:12:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/06/08/project-euler-29</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>Consider all integer combinations of \(a^b\) for 2 \(\leq\) a \(\leq\) 5 and 2 \(\leq\) b \(\leq\) 5:
-</p>
-<p>
-\(2^2\) =4, \(2^3\) =8, \(2^4\) =16, \(2^5\) =32
-\(3^2\) =9, \(3^3\) =27, \(3^4\) =81, \(3^5\) =243
-\(4^2\) =16, \(4^3\) =64, \(4^4\) =256, \(4^5\) =1024
-\(5^2\) =25, \(5^3\) =125, \(5^4\) =625, \(5^5\) =3125
-</p>
-<p>
-If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms:
-</p>
-<p>
-4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125
-</p>
-<p>
-How many distinct terms are in the sequence generated by \(a^b\)  for 2 \(\leq\) a \(\leq\) 100 and 2 \(\leq\) b \(\leq\) 100?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  Set集合
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  9183
-</p>
-<p>  
-Source:<a href="http://sdrv.ms/14L7x4S">C++</a>
-</p>
-
-
-
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 67]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/05/31/project-euler-67/"/>
-    <updated>2013-05-31T20:47:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/05/31/project-euler-67</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>  By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
-</p>
-
-
-  <p style="text-align:center;font-family:courier new;font-size:12pt;"><span style="color:#ff0000;"><b>3</b></span><br />
-<span style="color:#ff0000;"><b>7</b></span> 4<br />
-2 <span style="color:#ff0000;"><b>4</b></span> 6<br />
-8 5 <span style="color:#ff0000;"><b>9</b></span> 3</p>
-
-
-<p>
-That is, 3 + 7 + 4 + 9 = 23.
-</p>
-<p>
-Find the maximum total from top to bottom in <a href="http://projecteuler.net/project/triangle.txt">triangle.txt</a> (right click and 'Save Link/Target As&hellip;'), a 15K text file containing a triangle with one-hundred rows.
-</p>
-<p>
-NOTE: This is a much more difficult version of <a href="http://kingfighter.github.io/blog/2013/05/06/project-euler-18/">Problem 18</a>. It is not possible to try every route to solve this problem, as there are 2<sup>99</sup> altogether! If you could check one trillion (10<sup>12</sup>) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
-</p>
-
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  请查看<a href="http://kingfighter.github.io/blog/2013/05/06/project-euler-18/">Problem 18</a>
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  7273
-</p>
-<p>
-Source:<a href="http://sdrv.ms/18Fx2v3">C++</a>
-</p>
-
-
-
-</div>
 </div>
 
 ]]></content>

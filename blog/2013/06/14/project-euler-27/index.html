@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: statement - eBash</title>
+  <title>project euler problem 27 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
-  <meta name="description" content="Category: statement">
+  <meta name="description" content="Table of Contents 1 Problem
+2 Solution
+3 Answer 1 Problem Euler discovered the remarkable quadratic formula: n² + n + 41 It turns out that the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk/blog/categories/statement/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -127,36 +129,160 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Statement</h1>
+    
+      <h1 class="entry-title">Project Euler Problem 27</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T23:31:00+08:00" pubdate data-updated="true">Jun 14<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
 
-  
-  <h2>2012</h2>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
 
-<article>
-  
-<h1><a href="/blog/2012/10/07/statement/">statement</a></h1>
-<time datetime="2012-10-07T15:50:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>07</span> <span class='year'>2012</span></time>
+<blockquote>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/statement/'>statement</a></span>
-</footer>
+<p>Euler discovered the remarkable quadratic formula:
+</p>
+<p>
+n² + n + 41
+</p>
+<p>
+It turns out that the formula will produce 40 primes for the consecutive values n = 0 to 39. However, when n = 40, 402 + 40 + 41 = 40(40 + 1) + 41 is divisible by 41, and certainly when n = 41, 41² + 41 + 41 is clearly divisible by 41.
+</p>
+<p>
+The incredible formula  n² - 79n + 1601 was discovered, which produces 80 primes for the consecutive values n = 0 to 79. The product of the coefficients, -79 and 1601, is -126479.
+</p>
+<p>
+Considering quadratics of the form:
+</p>
+<p>
+n² + an + b, where |a|  1000 and |b|  1000
+</p>
+<p>
+where |n| is the modulus/absolute value of n <br/>
+e.g. |11| = 11 and |-4| = 4 
+</p>
+<p>
+Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
+</p>
+</blockquote>
 
-
-</article>
 
 </div>
 
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p> Brute Force,当然如果n为0时,可知b必为素数.还可以试图代入n = 1等,得出a,b相应性质,减小复杂度
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  -59231
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
+</p></div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Lv Kaiyang(Kevin Lui)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T23:31:00+08:00" pubdate data-updated="true">Jun 14<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/project-euler/'>project euler</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/14/project-euler-35/" title="Previous Post: project euler problem 35">&laquo; project euler problem 35</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -188,10 +314,17 @@
     
   </ul>
 </section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (34)</a></li>
+<li class='category'><a href='/blog/categories/reading/'>reading (1)</a></li>
+<li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
 
-
-
-
+  </ul>
+</section>
 
 
   
@@ -212,7 +345,10 @@
       var disqus_shortname = 'ebash';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
