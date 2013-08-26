@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-08-26T23:58:30+08:00</updated>
+  <updated>2013-08-27T00:10:45+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -75,6 +75,48 @@ Source:<a href="http://sdrv.ms/17eVSQE">C++</a>
 
 </div>
 </div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[丰乳肥臀]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/06/15/fengrufeitun/"/>
+    <updated>2013-06-15T16:35:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/06/15/fengrufeitun</id>
+    <content type="html"><![CDATA[以前从来没有听说过莫言,直到他得奖了,然后我在图书馆找书时,就顺手借了本<a href="http://zh.wikipedia.org/wiki/丰乳肥臀">丰乳肥臀</a>。
+</p>
+<p>
+我承认我很少看&#8221;正经&#8221;的小说,觉得无趣,抑或是因为无法沉下心来.
+</p>
+<p>
+这本书讲述了从抗日到改革开放的上官家庭的命运。
+</p>
+<p>
+上官鲁氏当真是十分的了不得,丈夫无能,饱受婆家欺凌,受人凌辱,她没有死去,她又十分的睿智,早已看出上官家女人的悲惨的命运.
+</p>
+<blockquote>
+
+<p>我变了，也没变。这十几年里，上官家的人，像韭菜一样，一茬茬的死，一茬茬的发，有生就有死，死容易，活难，越难越要活。越不怕死越要挣扎着活。我要看到我的后代儿孙浮上水来那一天，你们都要给我争气！
+</p>
+</blockquote>
+
+
+<p>
+可惜,她的宝贝,混血儿上官金童却纯粹是个毫无出息的人,虽然一表人才,却是个一辈子吊在女人乳头上的窝囊废.窝囊归窝囊,却也是好人一个.
+</p>
+<p>
+最讨厌的是六亲不认的上官盼弟与其女鲁胜利,都只为自己的前途,最终也没有个好下场.
+</p>
+<p>
+八姐上官玉女最是让人怜惜
+</p><blockquote>
+
+<p>上官玉女二十多岁时，心理状态还像个小姑娘，胆怯的小姑娘，畏缩的小姑娘。她终生
+都像蛹一样缩在茧里，生怕给家里人增添麻烦。
+</p>
+</blockquote>
+
+
 ]]></content>
   </entry>
   
@@ -1555,92 +1597,6 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 </p>
 <p>
 Source:<a href="http://sdrv.ms/12afIbb">C++</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 15]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/05/04/project-euler-15/"/>
-    <updated>2013-05-04T17:19:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/05/04/project-euler-15</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>Starting in the top left corner of a 2*2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
-</p>
-<p>
-<img src="http://projecteuler.net/project/images/p_015.gif"  alt="http://projecteuler.net/project/images/p_015.gif" />
-</p>
-<p>
-How many such routes are there through a 20*20 grid?
-</p>
-
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>设左上角坐标为(0,0),右下角坐标为(n,n),则有
-</p>
-<p>
-递归式:
-</p>
-<p>
-path(i, j) = path(i-1, j) + path(i, j-1)
-</p>
-<p>
-因为只能向右或向下运动，故处于某点(i,j)时的路径数为与此点相邻的(i-1,j)和(i,j-1)路径数之和.
-</p>
-<p>
-递归终止条件为当点位于最右(最下)时，其路径数是唯一的,只能一直向下（向右),即path(n,i) = 1, path(i,n) = 1
-</p>
-<p>
-从数学的角度看,只需要用到高中的排列组合.从源到目的地共需要移动n + n步,求其路径数即求哪些步骤向右哪些步骤向下，即：
-</p>
-<p>
-path = \(C_{2n}^{n}\)
-</p>
-<p>
-当然对于a*b的格子路径数也是同样的做法
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  137846528820
-</p>
-<p>
-Source:<a href="http://sdrv.ms/11KEkGY">C++</a>
 </p>
 
 
