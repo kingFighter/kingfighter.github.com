@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | eBash]]></title>
+  <link href="http://www.lvkaiyang.tk//blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://www.lvkaiyang.tk//"/>
+  <updated>2013-08-26T23:58:30+08:00</updated>
+  <id>http://www.lvkaiyang.tk//</id>
+  <author>
+    <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[octopress-encoding-problem]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2012/10/07/octopress-encoding-problem/"/>
+    <updated>2012-10-07T15:58:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2012/10/07/octopress-encoding-problem</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+<b>注意：我的安装环境为win7 64位</b>
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">rake generate提示编码错误</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+以下是我碰到的已经解决的问题
+</p>
+
+
+
+<pre class="example">...
+/convertible.rb:29:in `read_yaml': invalid byte sequence in GBK (ArgumentError)
+....
+</pre>
+
+
+<p>
+原因：你生成的文件编码方式不是Ansi(比如是UTF－8)
+</p>
+<p>
+解决：转换文件编码为Ansi即可，不过生成的网页在UTF-8下会显示乱码
+</p>
+
+
+
+<pre class="example">...
+invalid byte sequence in UTF-8 (ArgumentError)
+...
+</pre>
+
+
+<p>
+原因：你生成的文件编码方式为UTF-8，,但在Ruby <b>convertible.rb</b> 文件中没有进行相应的修改
+</p>
+<p>
+解决：
+</p>
+
+
+<pre class="example">def read_yaml(base, name)
+     -self.content = File.read(File.join(base, name))
+     +self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">下面是我尝试但无效的解决方法</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+
+<p>
+解决： 在命令行下改变当前代码页编码为UTF-8：
+</p>
+
+
+<pre class="example">chcp.com 65001
+</pre>
+
+
+
+<p>
+解决：
+</p>
+
+
+<pre class="example">`打开 shell|cmd 之后，先执行
+
+    set LC_ALL=en_US.UTF-8
+    set LANG=en_US.UTF-8
+然后再执行 rake 的命令。
+或者，在 d:\RailsInstaller\Ruby1.9.2\setup_environment.bat 的最后面加上这两句。
+</pre>
+
+
+<p>
+解决：在octopress根目录下加
+</p>
+
+
+<pre class="example">export LC_ALL=zh_CN.UTF-8
+export LANG=zh_CN.UTF-8
+</pre>
+
+
+<p>
+解决：与上一解决方法相似，只是加入的位置不同
+</p>
+
+
+<pre class="example">在git bash下
+cd ~
+emacs -nw .bash_profile
+加入
+export   LC_ALL=zh_CN.UTF-8
+export   LANG=zh_CN.UTF-8
+</pre>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
