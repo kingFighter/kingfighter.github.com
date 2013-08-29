@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>about - eBash</title>
+  <title>project euler problem 40 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
-  <meta name="description" content="About Sep 14th, 2012 Sep 14th, 2012 Tweet Comments Please enable JavaScript to view the comments powered by Disqus. Recent Posts project euler &hellip;">
+  <meta name="description" content="Table of Contents 1 Problem
+2 Solution
+3 Answer 1 Problem An irrational decimal fraction is created by concatenating the positive integers: 0. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.lvkaiyang.tk//about/">
+  <link rel="canonical" href="http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -127,32 +129,15 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-14T00:55:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time></p>
-  </header>
-  
-  
-
-  
-    <footer>
+    
+      <h1 class="entry-title">Project Euler Problem 40</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -164,21 +149,145 @@
   
 
 
-<time datetime="2012-09-14T00:55:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+<time datetime="2013-08-28T21:51:00+08:00" pubdate data-updated="true">Aug 28<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>An irrational decimal fraction is created by concatenating the positive integers:
+</p>
+<p>
+0.123456789101112131415161718192021&hellip;
+</p>
+<p>
+It can be seen that the \(12^{th}\) digit of the fractional part is 1.
+</p>
+<p>
+If dn represents the nth digit of the fractional part, find the value of the following expression.
+</p>
+
+
+\begin{eqnarray*}
+d_{1} × d_{10} × d_{100} × d_{1000} × d_{10000} × d_{100000} × d_{1000000}
+\end{eqnarray*}
+
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>二分法,我们无法直接得知第ith的digit,但是容易知道number n所在的位置.要找ith的digit,其必夹在1~i number之间的某个位置.如：
+</p>
+<p>
+找1000th的digit
+</p><ol>
+<li>其必夹在1~1000 number之间,易知 (1 + 1000) / 2 = 500 的最后一位0在序列中的位置为1392th(number 11的最后一位1的位置为13),比1000th大,则必在1~499间
+</li>
+<li>如此往复,我们可以找到最接近的number 370,其最后一位0为1002th,则1000th为digit 3
+</li>
+</ol>
+
+
+<p>
+依此法可以找到任意ith的digit
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  210
+</p>
+<p>
+Source:<a href="http://sdrv.ms/1cjMvR3">C++</a>
+</p>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//about/index.html" data-via="" data-counturl="http://www.lvkaiyang.tk//about/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Lv Kaiyang(Kevin Lui)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-28T21:51:00+08:00" pubdate data-updated="true">Aug 28<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/project-euler/'>project euler</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/" data-via="" data-counturl="http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/" >Tweet</a>
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2013/08/26/project-euler-37/" title="Previous Post: project euler problem 37">&laquo; project euler problem 37</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -217,10 +326,19 @@
     
   </ul>
 </section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (36)</a></li>
+<li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
+<li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
+<li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
 
-
-
-
+  </ul>
+</section>
 
 
   
@@ -242,8 +360,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.lvkaiyang.tk//about/index.html';
-        var disqus_url = 'http://www.lvkaiyang.tk//about/index.html';
+        var disqus_identifier = 'http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/';
+        var disqus_url = 'http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/';
         var disqus_script = 'embed.js';
       
 

@@ -11,7 +11,7 @@
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem Starting in the top left corner of a 2*2 grid, and only being able to move to the right &hellip;">
+3 Answer 1 Problem If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -130,6 +130,132 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/05/project-euler-17/">Project Euler Problem 17</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-05T11:09:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/05/project-euler-17/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+</p>
+<p>
+If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+</p>
+
+<p>
+NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of &#8220;and&#8221; when writing out numbers is in compliance with British usage.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>我们知道&lt;1000的都可由,one,two&hellip;ninteen,twenty,thirty&hellip;ninety,hundred,and 这些英文字母表达出来，并将one~nineteen的字母数保存在数组 <code>a[19]={3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8}</code> 中，twenty,thirty..ninety的字母数保存在数组 <code>b[8]＝{6, 6, 5, 5, 5, 7, 6, 6}</code> 中，简单分类计算sum：
+</p>
+<ol>
+<li>\(i\in[1,20)\) <br/>
+            sum = sum+ a[i - 1]
+</li>
+<li>\(i\in[20,100)\)
+<ol>
+<li>sum = sum + b[i / 10 - 2]   \(i\in\) {20,30,..90}
+</li>
+<li>sum = sum + b[i / 10 - 2] + a[i % 10 - 1] \(i\in\) {21,22,&hellip;99}
+</li>
+</ol>
+
+</li>
+<li>\(i\in[100,1000)\)
+<ol>
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;)  \(i\in\) {100,200,300..900}
+</li>
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 100 - 1]; \(i\in\) {101-119,201-219,&hellip;901-919}
+</li>
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + b[i / 10 % 10 - 2]; \(i\in\) {120,130,140..990}
+</li>
+<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 10 - 1] + b[i / 10 % 10 - 2]; \(i\in\) {121,122&hellip;999}
+</li>
+</ol>
+
+</li>
+<li>\(i = 1000\) <br/>
+   sum = sum + len(&#8220;one&#8221;) + len(&#8220;thousand&#8221;);
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  21124
+</p>
+<p>
+Source:<a href="http://sdrv.ms/12afIbb">C++</a>
+</p>
+
+
+
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1180,114 +1306,6 @@ Source:<a href="http://sdrv.ms/YisQ0E">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/30/project-euler-9/">Project Euler Problem 9</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-30T11:45:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/04/30/project-euler-9/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>A Pythagorean triplet is a set of three natural numbers, a  b  c, for which,
-</p>
-<p>
-a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
-For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
-</p>
-<p>
-There exists exactly one Pythagorean triplet for which a + b + c = 1000.
-Find the product abc.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>很直接
-</p>
-<p>
-假设 \(a \leqslant b \leqslant c\) ,则
-</p>
-
-
-\begin{eqnarray}
-a \leqslant \frac{s-3}{3}
-\end{eqnarray}
-\begin{eqnarray}
-b < \frac{s-a}{2}
-\end{eqnarray}
-
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  31875000
-</p>
-<p>
-Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
-</p>
-
-
-
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1305,6 +1323,10 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/28/project-euler-40/">project euler problem 40</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/project-euler-37/">project euler problem 37</a>
       </li>
     
@@ -1320,10 +1342,6 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
         <a href="/blog/2013/06/14/project-euler-27/">project euler problem 27</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/06/14/project-euler-35/">project euler problem 35</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1332,7 +1350,7 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
     <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (35)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (36)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
 <li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>

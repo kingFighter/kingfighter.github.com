@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-08-27T00:10:45+08:00</updated>
+  <updated>2013-08-29T19:36:50+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,105 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 40]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/"/>
+    <updated>2013-08-28T21:51:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>An irrational decimal fraction is created by concatenating the positive integers:
+</p>
+<p>
+0.123456789101112131415161718192021&hellip;
+</p>
+<p>
+It can be seen that the \(12^{th}\) digit of the fractional part is 1.
+</p>
+<p>
+If dn represents the nth digit of the fractional part, find the value of the following expression.
+</p>
+
+
+\begin{eqnarray*}
+d_{1} × d_{10} × d_{100} × d_{1000} × d_{10000} × d_{100000} × d_{1000000}
+\end{eqnarray*}
+
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>二分法,我们无法直接得知第ith的digit,但是容易知道number n所在的位置.要找ith的digit,其必夹在1~i number之间的某个位置.如：
+</p>
+<p>
+找1000th的digit
+</p><ol>
+<li>其必夹在1~1000 number之间,易知 (1 + 1000) / 2 = 500 的最后一位0在序列中的位置为1392th(number 11的最后一位1的位置为13),比1000th大,则必在1~499间
+</li>
+<li>如此往复,我们可以找到最接近的number 370,其最后一位0为1002th,则1000th为digit 3
+</li>
+</ol>
+
+
+<p>
+依此法可以找到任意ith的digit
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  210
+</p>
+<p>
+Source:<a href="http://sdrv.ms/1cjMvR3">C++</a>
+</p>
+
+
+
+
+
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 37]]></title>
@@ -353,84 +452,6 @@ Source:<a href="http://sdrv.ms/17DumxU">C++</a>
 
 
 </div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 34]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-34/"/>
-    <updated>2013-06-09T16:52:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/06/09/project-euler-34</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
-</p>
-<p>
-Find the sum of all numbers which are equal to the sum of the factorial of their digits.
-</p>
-<p>
-Note: as 1! = 1 and 2! = 2 are not sums they are not included.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  问题的关键只要找出上界就行.跟<a href="http://kingfighter.github.io/blog/2013/05/24/project-euler-30/">Project Euler Problem 30</a> 类似,设上界为n位数字,则
-</p>
-<p>  
-  \(10^n\) &lt; 9! * n 
-</p>
-<p>
-  易知n最大为7,更确切的说其上界为 9! * n = 2540160; <br/>
-  剩下的就是遍历查找了
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  40730
-</p>
-<p>
-Source:<a href="http://sdrv.ms/17Dui18">C++</a>
-</p></div>
 </div>
 
 ]]></content>

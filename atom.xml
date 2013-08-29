@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://www.lvkaiyang.tk//atom.xml" rel="self"/>
   <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2013-08-27T00:10:45+08:00</updated>
+  <updated>2013-08-29T19:36:50+08:00</updated>
   <id>http://www.lvkaiyang.tk//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 40]]></title>
+    <link href="http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/"/>
+    <updated>2013-08-28T21:51:00+08:00</updated>
+    <id>http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>An irrational decimal fraction is created by concatenating the positive integers:
+</p>
+<p>
+0.123456789101112131415161718192021&hellip;
+</p>
+<p>
+It can be seen that the \(12^{th}\) digit of the fractional part is 1.
+</p>
+<p>
+If dn represents the nth digit of the fractional part, find the value of the following expression.
+</p>
+
+
+\begin{eqnarray*}
+d_{1} × d_{10} × d_{100} × d_{1000} × d_{10000} × d_{100000} × d_{1000000}
+\end{eqnarray*}
+
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>二分法,我们无法直接得知第ith的digit,但是容易知道number n所在的位置.要找ith的digit,其必夹在1~i number之间的某个位置.如：
+</p>
+<p>
+找1000th的digit
+</p><ol>
+<li>其必夹在1~1000 number之间,易知 (1 + 1000) / 2 = 500 的最后一位0在序列中的位置为1392th(number 11的最后一位1的位置为13),比1000th大,则必在1~499间
+</li>
+<li>如此往复,我们可以找到最接近的number 370,其最后一位0为1002th,则1000th为digit 3
+</li>
+</ol>
+
+
+<p>
+依此法可以找到任意ith的digit
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  210
+</p>
+<p>
+Source:<a href="http://sdrv.ms/1cjMvR3">C++</a>
+</p>
+
+
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 37]]></title>
@@ -1500,103 +1588,6 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
 </p>
 <p>
 Source:<a href="http://sdrv.ms/18WJuTc">C++迭代</a> <a href="http://sdrv.ms/18WJyCn">C++递归</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 17]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/05/05/project-euler-17/"/>
-    <updated>2013-05-05T11:09:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/05/05/project-euler-17</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
-</p>
-<p>
-If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
-</p>
-
-<p>
-NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of &#8220;and&#8221; when writing out numbers is in compliance with British usage.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>我们知道&lt;1000的都可由,one,two&hellip;ninteen,twenty,thirty&hellip;ninety,hundred,and 这些英文字母表达出来，并将one~nineteen的字母数保存在数组 <code>a[19]={3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8}</code> 中，twenty,thirty..ninety的字母数保存在数组 <code>b[8]＝{6, 6, 5, 5, 5, 7, 6, 6}</code> 中，简单分类计算sum：
-</p>
-<ol>
-<li>\(i\in[1,20)\) <br/>
-            sum = sum+ a[i - 1]
-</li>
-<li>\(i\in[20,100)\)
-<ol>
-<li>sum = sum + b[i / 10 - 2]   \(i\in\) {20,30,..90}
-</li>
-<li>sum = sum + b[i / 10 - 2] + a[i % 10 - 1] \(i\in\) {21,22,&hellip;99}
-</li>
-</ol>
-
-</li>
-<li>\(i\in[100,1000)\)
-<ol>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;)  \(i\in\) {100,200,300..900}
-</li>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 100 - 1]; \(i\in\) {101-119,201-219,&hellip;901-919}
-</li>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + b[i / 10 % 10 - 2]; \(i\in\) {120,130,140..990}
-</li>
-<li>sum = sum + a[i / 100 - 1] + len(&#8220;hundred&#8221;) + len(&#8220;and&#8221;) + a[i % 10 - 1] + b[i / 10 % 10 - 2]; \(i\in\) {121,122&hellip;999}
-</li>
-</ol>
-
-</li>
-<li>\(i = 1000\) <br/>
-   sum = sum + len(&#8220;one&#8221;) + len(&#8220;thousand&#8221;);
-</li>
-</ol>
-
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  21124
-</p>
-<p>
-Source:<a href="http://sdrv.ms/12afIbb">C++</a>
 </p>
 
 
