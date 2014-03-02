@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: project euler | eBash]]></title>
-  <link href="http://www.lvkaiyang.tk//blog/categories/project-euler/atom.xml" rel="self"/>
-  <link href="http://www.lvkaiyang.tk//"/>
-  <updated>2014-02-12T16:27:59+08:00</updated>
-  <id>http://www.lvkaiyang.tk//</id>
+  <link href="http://kingfighter.github.io//blog/categories/project-euler/atom.xml" rel="self"/>
+  <link href="http://kingfighter.github.io//"/>
+  <updated>2014-03-02T14:45:23+08:00</updated>
+  <id>http://kingfighter.github.io//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
     
@@ -14,10 +14,125 @@
 
   
   <entry>
+    <title type="html"><![CDATA[project euler problem 26]]></title>
+    <link href="http://kingfighter.github.io//blog/2014/03/02/project-euler-26/"/>
+    <updated>2014-03-02T14:13:00+08:00</updated>
+    <id>http://kingfighter.github.io//blog/2014/03/02/project-euler-26</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+
+<p>
+A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
+</p>
+<p>
+1/2     =       0.5
+</p>
+<p>
+1/3     =       0.(3)
+</p>
+<p>
+1/4     =       0.25
+</p>
+<p>
+1/5     =       0.2
+</p>
+<p>
+1/6     =       0.1(6)
+</p>
+<p>
+1/7     =       0.(142857)
+</p>
+<p>
+1/8     =       0.125
+</p>
+<p>
+1/9     =       0.(1)
+</p>
+<p>
+1/10    =       0.1
+</p>
+<p>
+Where 0.1(6) means 0.166666&hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
+</p>
+<p>
+Find the value of d &lt; 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  Brute Force,将小数部分保存vector中, 然后从头遍历寻找是否有相同的
+  pattern, 重复找到三次即认可.
+</p>
+<p>
+  更优的做法需要数学知识<sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup>
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>983
+</p>
+<p>
+Source:<a href="http://1drv.ms/1eOxC7U">C++</a>
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://mathworld.wolfram.com/DecimalExpansion.html">http://mathworld.wolfram.com/DecimalExpansion.html</a>
+</p>
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[project euler problem 40]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40/"/>
+    <link href="http://kingfighter.github.io//blog/2013/08/28/project-euler-40/"/>
     <updated>2013-08-28T21:51:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/08/28/project-euler-40</id>
+    <id>http://kingfighter.github.io//blog/2013/08/28/project-euler-40</id>
     <content type="html"><![CDATA[<p></p></p>
 
 <div id="table-of-contents">
@@ -114,9 +229,9 @@ Source:<a href="http://sdrv.ms/1cjMvR3">C++</a>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 37]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/08/26/project-euler-37/"/>
+    <link href="http://kingfighter.github.io//blog/2013/08/26/project-euler-37/"/>
     <updated>2013-08-26T23:38:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/08/26/project-euler-37</id>
+    <id>http://kingfighter.github.io//blog/2013/08/26/project-euler-37</id>
     <content type="html"><![CDATA[<p></p></p>
 
 <div id="table-of-contents">
@@ -190,9 +305,9 @@ Source:<a href="http://sdrv.ms/17eVSQE">C++</a>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 27]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27/"/>
+    <link href="http://kingfighter.github.io//blog/2013/06/14/project-euler-27/"/>
     <updated>2013-06-14T23:31:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-27</id>
+    <id>http://kingfighter.github.io//blog/2013/06/14/project-euler-27</id>
     <content type="html"><![CDATA[<p></p></p>
 
 <div id="table-of-contents">
@@ -277,9 +392,9 @@ Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 35]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-35/"/>
+    <link href="http://kingfighter.github.io//blog/2013/06/14/project-euler-35/"/>
     <updated>2013-06-14T22:44:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/06/14/project-euler-35</id>
+    <id>http://kingfighter.github.io//blog/2013/06/14/project-euler-35</id>
     <content type="html"><![CDATA[<p></p></p>
 
 <div id="table-of-contents">
@@ -341,117 +456,6 @@ How many circular primes are there below one million?
 <p>
 Source:<a href="http://sdrv.ms/12MpN3F">C++</a>
 </p></div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 36]]></title>
-    <link href="http://www.lvkaiyang.tk//blog/2013/06/10/project-euler-36/"/>
-    <updated>2013-06-10T20:24:00+08:00</updated>
-    <id>http://www.lvkaiyang.tk//blog/2013/06/10/project-euler-36</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a>
-<ul>
-<li><a href="#sec-2-1">2.1 Brute Force</a></li>
-<li><a href="#sec-2-2">2.2 Generate</a></li>
-</ul>
-</li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>  The decimal number, 585 = \(1001001001_2\) (binary), is palindromic in both bases.
-</p>
-<p>
-Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
-</p>
-<p>
-(Please note that the palindromic number, in either base, may not include leading zeros.)
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Brute Force</h3>
-<div class="outline-text-3" id="text-2-1">
-
-<p>   因为任何进制数字开头不能为0,则二进制表示时最低位必为1,故数字必为奇数.<br/>
-   接下来只要对所有范围内的奇数进行回文数检查即可.<br/>
-   检查方法:
-</p><ol>
-<li>将数字每位分解,相应位对比是否相同(121,第一位和第三位比较)
-</li>
-<li>将数字倒过来写,比较与原数是否相等(123,反过来即321不等)
-
-<p>
-      主要利用整除与模,类似于进制间的转换
-</p></li>
-</ol>
-
-</div>
-
-</div>
-
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Generate</h3>
-<div class="outline-text-3" id="text-2-2">
-
-<p>   直接在范围内产生要求的二进制回文数,再检查是否为十进制的回文数.检查方法同 Brute Force<br/>
-   每个数可生成两个回文数: 01 -&gt; 0110 or 010 <br/>
-   具体操作主要用整除与模,对于二进制来说则有更快捷的shift等位操作.
-</p></div>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  872187
-</p>
-<p>  
-Source:<a href="http://sdrv.ms/17DumxU">C++</a>
-</p>
-
-
-
-</div>
 </div>
 
 ]]></content>

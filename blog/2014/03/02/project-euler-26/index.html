@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>丰乳肥臀 - eBash</title>
+  <title>project euler problem 26 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
-  <meta name="description" content="以前从来没有听说过莫言,直到他得奖了,然后我在图书馆找书时,就顺手借了本丰乳肥臀。 我承认我很少看&#8221;正经&#8221;的小说,觉得无趣,抑或是因为无法沉下心来. 这本书讲述了从抗日到改革开放的上官家庭的命运。 上官鲁氏当真是十分的了不得,丈夫无能,饱受婆家欺凌,受人凌辱,她没有死去, &hellip;">
+  <meta name="description" content="Table of Contents 1 Problem
+2 Solution
+3 Answer Problem A unit fraction contains 1 in the numerator. The decimal representation of the unit &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kingfighter.github.io//blog/2013/06/15/fengrufeitun/">
+  <link rel="canonical" href="http://kingfighter.github.io//blog/2014/03/02/project-euler-26/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -132,7 +134,7 @@
   
   <header>
     
-      <h1 class="entry-title">丰乳肥臀</h1>
+      <h1 class="entry-title">Project Euler Problem 26</h1>
     
     
       <p class="meta">
@@ -148,7 +150,7 @@
   
 
 
-<time datetime="2013-06-15T16:35:00+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
+<time datetime="2014-03-02T14:13:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -157,40 +159,102 @@
   </header>
 
 
-<div class="entry-content">以前从来没有听说过莫言,直到他得奖了,然后我在图书馆找书时,就顺手借了本<a href="http://zh.wikipedia.org/wiki/丰乳肥臀">丰乳肥臀</a>。
-</p>
-<p>
-我承认我很少看&#8221;正经&#8221;的小说,觉得无趣,抑或是因为无法沉下心来.
-</p>
-<p>
-这本书讲述了从抗日到改革开放的上官家庭的命运。
-</p>
-<p>
-上官鲁氏当真是十分的了不得,丈夫无能,饱受婆家欺凌,受人凌辱,她没有死去,她又十分的睿智,早已看出上官家女人的悲惨的命运.
-</p>
+<div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
 <blockquote>
 
-<p>我变了，也没变。这十几年里，上官家的人，像韭菜一样，一茬茬的死，一茬茬的发，有生就有死，死容易，活难，越难越要活。越不怕死越要挣扎着活。我要看到我的后代儿孙浮上水来那一天，你们都要给我争气！
+
+<p>
+A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
+</p>
+<p>
+1/2     =       0.5
+</p>
+<p>
+1/3     =       0.(3)
+</p>
+<p>
+1/4     =       0.25
+</p>
+<p>
+1/5     =       0.2
+</p>
+<p>
+1/6     =       0.1(6)
+</p>
+<p>
+1/7     =       0.(142857)
+</p>
+<p>
+1/8     =       0.125
+</p>
+<p>
+1/9     =       0.(1)
+</p>
+<p>
+1/10    =       0.1
+</p>
+<p>
+Where 0.1(6) means 0.166666&hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
+</p>
+<p>
+Find the value of d &lt; 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 </p>
 </blockquote>
 
 
-<p>
-可惜,她的宝贝,混血儿上官金童却纯粹是个毫无出息的人,虽然一表人才,却是个一辈子吊在女人乳头上的窝囊废.窝囊归窝囊,却也是好人一个.
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  Brute Force,将小数部分保存vector中, 然后从头遍历寻找是否有相同的
+  pattern, 重复找到三次即认可.
 </p>
 <p>
-最讨厌的是六亲不认的上官盼弟与其女鲁胜利,都只为自己的前途,最终也没有个好下场.
+  更优的做法需要数学知识<sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup>
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>983
 </p>
 <p>
-八姐上官玉女最是让人怜惜
-</p><blockquote>
-
-<p>上官玉女二十多岁时，心理状态还像个小姑娘，胆怯的小姑娘，畏缩的小姑娘。她终生
-都像蛹一样缩在茧里，生怕给家里人增添麻烦。
+Source:<a href="http://1drv.ms/1eOxC7U">C++</a>
 </p>
-</blockquote>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://mathworld.wolfram.com/DecimalExpansion.html">http://mathworld.wolfram.com/DecimalExpansion.html</a>
+</p>
 
 
+</div>
+</div>
+
+</div>
+</div>
 </div>
 
 
@@ -213,12 +277,12 @@
   
 
 
-<time datetime="2013-06-15T16:35:00+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
+<time datetime="2014-03-02T14:13:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/masterpiece/'>masterpiece</a>, <a class='category' href='/blog/categories/reading/'>reading</a>
+    <a class='category' href='/blog/categories/project-euler/'>project euler</a>
   
 </span>
 
@@ -227,7 +291,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2013/06/15/fengrufeitun/" data-via="" data-counturl="http://kingfighter.github.io//blog/2013/06/15/fengrufeitun/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2014/03/02/project-euler-26/" data-via="" data-counturl="http://kingfighter.github.io//blog/2014/03/02/project-euler-26/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -238,10 +302,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/15/The-Game/" title="Previous Post: 把妹达人">&laquo; 把妹达人</a>
+        <a class="basic-alignment left" href="/blog/2013/08/28/project-euler-40/" title="Previous Post: project euler problem 40">&laquo; project euler problem 40</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/26/project-euler-37/" title="Next Post: project euler problem 37">project euler problem 37 &raquo;</a>
       
     </p>
   </footer>
@@ -317,8 +379,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://kingfighter.github.io//blog/2013/06/15/fengrufeitun/';
-        var disqus_url = 'http://kingfighter.github.io//blog/2013/06/15/fengrufeitun/';
+        var disqus_identifier = 'http://kingfighter.github.io//blog/2014/03/02/project-euler-26/';
+        var disqus_url = 'http://kingfighter.github.io//blog/2014/03/02/project-euler-26/';
         var disqus_script = 'embed.js';
       
 
