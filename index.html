@@ -10,8 +10,9 @@
 
   
   <meta name="description" content="Table of Contents 1 Problem
-2 Solution
-3 Answer Problem A unit fraction contains 1 in the numerator. The decimal representation of the unit &hellip;">
+2 Solution 2.1 Brute Force
+2.2 Recursion
+2.3 DP 3 Answer Problem In England the currency is made up of pound, £, and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -131,6 +132,170 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/03/project-euler-31/">Project Euler Problem 31</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-03T20:45:00+08:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2014</time>
+        
+         | <a href="/blog/2014/03/03/project-euler-31/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Brute Force</a></li>
+<li><a href="#sec-2-2">2.2 Recursion</a></li>
+<li><a href="#sec-2-3">2.3 DP</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
+</p>
+<p>
+1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).
+</p>
+<p>
+It is possible to make £2 in the following way:
+</p>
+<p>
+1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
+</p>
+<p>
+How many different ways can £2 be made using any number of coins?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Brute Force</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>可以用穷举法:
+</p>
+<p>
+200a+100b+50c+20d+10e+5f+2g+h = 200
+</p>
+<p>
+穷尽a,b,c,d,e,f,g,h所有的可能.a:0~1, b:0~2&hellip;., 不过知道a = 1时, b:0,
+可缩小a,b,c&hellip;.大小范围, 见 C++Brute1, 类似的见C++Brute2
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Recursion</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>很直接的方法:
+</p><ol>
+<li>用一个200的coin, 没用其它的
+</li>
+<li>用零个200的coin, 由最大coin为100的来换零钱200
+</li>
+<li>用两个100的coin, 没用其它的
+</li>
+<li>用一个100的coin, 由最大coin为50的来换零钱100
+</li>
+<li>用零个100的coin, 由最大coin为50的来换零钱200
+</li>
+</ol>
+
+<p>   &hellip;..
+</p>
+<p>
+这里大家应该能看出规律, 用公式表示:
+</p>
+<p>
+  \begin{eqnarray*}
+f(t, c) = 1 & & if & c =1 &or& t=0 & \newline
+
+f(t,c) = \sum_{i=0}^{\left \lfloor \frac{t}{c} \right \rfloor}f(t-ic, s(c)) & & if & c > 1 & and  & t>0  &
+  \end{eqnarray*}
+
+其中t是要换的钱, c是当前最大的coin,s(c)是下一个比c小的coin
+</p>
+<p>
+见 C++Formula, 稍有不同的解法见 C++Formula1
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">DP</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>见<a href="http://www.mathblog.dk/project-euler-31-combinations-english-currency-denominations/">分析</a>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>73682
+</p>
+<p>
+Source:<a href="http://1drv.ms/Nn1zWO">C++Formula</a>, <a href="http://1drv.ms/1eVztrC">C++Formula1,</a> <a href="http://1drv.ms/1cnATAU">C++Brute1</a>, <a href="http://1drv.ms/1gMSteo">C++Brute2</a>, <a href="http://1drv.ms/1eVzMCU">dp</a>
+</p></div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1035,111 +1200,6 @@ Source:<a href="http://sdrv.ms/17Dui18">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/09/project-euler-23/">Project Euler Problem 23</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-09T16:21:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/09/project-euler-23/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>  A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
-</p>
-<p>
-A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.
-</p>
-<p>
-As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
-</p>
-<p>
-Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  上界很明显为28123
-</p>
-<ol>
-<li>计算到上界为止所有数的和,记为sum,并将abundant数保存
-</li>
-<li>将abundant数两两相加,如不大于上界,则将这两数的和记为可以表示为abundant数相加,即不满足题意要求的数
-</li>
-<li>所有可表示为abundant数相加的数其和记为abundantsSum
-</li>
-<li>所求答案即为 sum - abundantsSum
-</li>
-</ol>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  4179871
-</p>
-<p>
-Source:<a href="http://sdrv.ms/18lliPp">C++</a>
-</p></div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1153,6 +1213,10 @@ Source:<a href="http://sdrv.ms/18lliPp">C++</a>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/03/03/project-euler-31/">project euler problem 31</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/03/02/project-euler-26/">project euler problem 26</a>
@@ -1170,10 +1234,6 @@ Source:<a href="http://sdrv.ms/18lliPp">C++</a>
         <a href="/blog/2013/06/15/fengrufeitun/">丰乳肥臀</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/06/15/The-Game/">把妹达人</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1182,7 +1242,7 @@ Source:<a href="http://sdrv.ms/18lliPp">C++</a>
     <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (37)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (38)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
 <li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>

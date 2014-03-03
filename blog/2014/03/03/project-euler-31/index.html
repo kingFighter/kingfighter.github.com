@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 9 - eBash</title>
+  <title>project euler problem 31 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
-2 Solution
-3 Answer 1 Problem A Pythagorean triplet is a set of three natural numbers, a b c, for which, a2 + b2 = c2 &hellip;">
+2 Solution 2.1 Brute Force
+2.2 Recursion
+2.3 DP 3 Answer Problem In England the currency is made up of pound, £, and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kingfighter.github.io//blog/2013/04/30/project-euler-9/">
+  <link rel="canonical" href="http://kingfighter.github.io//blog/2014/03/03/project-euler-31/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -134,7 +135,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 9</h1>
+      <h1 class="entry-title">Project Euler Problem 31</h1>
     
     
       <p class="meta">
@@ -150,7 +151,7 @@
   
 
 
-<time datetime="2013-04-30T11:45:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2014-03-03T20:45:00+08:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -165,27 +166,37 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-2">2 Solution</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Brute Force</a></li>
+<li><a href="#sec-2-2">2.2 Recursion</a></li>
+<li><a href="#sec-2-3">2.3 DP</a></li>
+</ul>
+</li>
 <li><a href="#sec-3">3 Answer</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<h2 id="sec-1">Problem</h2>
 <div class="outline-text-2" id="text-1">
 
 <blockquote>
 
-<p>A Pythagorean triplet is a set of three natural numbers, a  b  c, for which,
+<p>In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
 </p>
 <p>
-a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
-For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
+1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).
 </p>
 <p>
-There exists exactly one Pythagorean triplet for which a + b + c = 1000.
-Find the product abc.
+It is possible to make £2 in the following way:
+</p>
+<p>
+1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
+</p>
+<p>
+How many different ways can £2 be made using any number of coins?
 </p>
 </blockquote>
 
@@ -195,40 +206,86 @@ Find the product abc.
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<h2 id="sec-2">Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>很直接
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Brute Force</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>可以用穷举法:
 </p>
 <p>
-假设 \(a \leqslant b \leqslant c\) ,则
+200a+100b+50c+20d+10e+5f+2g+h = 200
 </p>
+<p>
+穷尽a,b,c,d,e,f,g,h所有的可能.a:0~1, b:0~2&hellip;., 不过知道a = 1时, b:0,
+可缩小a,b,c&hellip;.大小范围, 见 C++Brute1, 类似的见C++Brute2
+</p></div>
 
+</div>
 
-\begin{eqnarray}
-a \leqslant \frac{s-3}{3}
-\end{eqnarray}
-\begin{eqnarray}
-b < \frac{s-a}{2}
-\end{eqnarray}
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Recursion</h3>
+<div class="outline-text-3" id="text-2-2">
 
+<p>很直接的方法:
+</p><ol>
+<li>用一个200的coin, 没用其它的
+</li>
+<li>用零个200的coin, 由最大coin为100的来换零钱200
+</li>
+<li>用两个100的coin, 没用其它的
+</li>
+<li>用一个100的coin, 由最大coin为50的来换零钱100
+</li>
+<li>用零个100的coin, 由最大coin为50的来换零钱200
+</li>
+</ol>
+
+<p>   &hellip;..
+</p>
+<p>
+这里大家应该能看出规律, 用公式表示:
+</p>
+<p>
+  \begin{eqnarray*}
+f(t, c) = 1 & & if & c =1 &or& t=0 & \newline
+
+f(t,c) = \sum_{i=0}^{\left \lfloor \frac{t}{c} \right \rfloor}f(t-ic, s(c)) & & if & c > 1 & and  & t>0  &
+  \end{eqnarray*}
+
+其中t是要换的钱, c是当前最大的coin,s(c)是下一个比c小的coin
+</p>
+<p>
+见 C++Formula, 稍有不同的解法见 C++Formula1
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">DP</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>见<a href="http://www.mathblog.dk/project-euler-31-combinations-english-currency-denominations/">分析</a>
+</p></div>
 </div>
 
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<h2 id="sec-3">Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>  31875000
+<p>73682
 </p>
 <p>
-Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
-</p>
-
-
-
-</div>
+Source:<a href="http://1drv.ms/Nn1zWO">C++Formula</a>, <a href="http://1drv.ms/1eVztrC">C++Formula1,</a> <a href="http://1drv.ms/1cnATAU">C++Brute1</a>, <a href="http://1drv.ms/1gMSteo">C++Brute2</a>, <a href="http://1drv.ms/1eVzMCU">dp</a>
+</p></div>
 </div>
 </div>
 
@@ -252,7 +309,7 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
   
 
 
-<time datetime="2013-04-30T11:45:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2014-03-03T20:45:00+08:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2014</time>
       
 
 <span class="categories">
@@ -266,7 +323,7 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2013/04/30/project-euler-9/" data-via="" data-counturl="http://kingfighter.github.io//blog/2013/04/30/project-euler-9/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2014/03/03/project-euler-31/" data-via="" data-counturl="http://kingfighter.github.io//blog/2014/03/03/project-euler-31/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -277,10 +334,8 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/04/30/project-euler-8/" title="Previous Post: project euler problem 8">&laquo; project euler problem 8</a>
+        <a class="basic-alignment left" href="/blog/2014/03/02/project-euler-26/" title="Previous Post: project euler problem 26">&laquo; project euler problem 26</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/30/project-euler-10/" title="Next Post: project euler problem 10">project euler problem 10 &raquo;</a>
       
     </p>
   </footer>
@@ -356,8 +411,8 @@ Source:<a href="http://sdrv.ms/12W6W2N">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://kingfighter.github.io//blog/2013/04/30/project-euler-9/';
-        var disqus_url = 'http://kingfighter.github.io//blog/2013/04/30/project-euler-9/';
+        var disqus_identifier = 'http://kingfighter.github.io//blog/2014/03/03/project-euler-31/';
+        var disqus_url = 'http://kingfighter.github.io//blog/2014/03/03/project-euler-31/';
         var disqus_script = 'embed.js';
       
 

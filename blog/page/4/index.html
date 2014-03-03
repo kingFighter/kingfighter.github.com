@@ -11,7 +11,7 @@
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below &hellip;">
+3 Answer 1 Problem \(2^{15}\) = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26. What is the sum of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -131,6 +131,96 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/30/project-euler-16/">Project Euler Problem 16</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-30T13:11:00+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/30/project-euler-16/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>\(2^{15}\) = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+</p>
+<p>
+What is the sum of the digits of the number \(2^{1000}\) ?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>没什么好说的,关键在于大数据的处理
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  1366
+</p>
+<p>
+Source:<a href="http://sdrv.ms/10QuCrB">C++</a>
+</p>
+
+
+
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1039,114 +1129,6 @@ Source:<a href="http://sdrv.ms/153CEPc">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/28/project-euler-1/">Project Euler Problem 1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-28T20:23:00+08:00" pubdate data-updated="true">Apr 28<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/04/28/project-euler-1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-</p>
-<p>
-Find the sum of all the multiples of 3 or 5 below 1000.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  可以直接遍历找出所有整除3或5的数，然后相加，需要 \(O\) (n)。但如果运用数学集合的概念,只要 \(O\) (1).
-</p>
-<p>
-  基本思路:
-</p><ol>
-<li>所有被3整除数相加
-       3 + 6 + &hellip; + 999 = 3 * (1 + 2 + &hellip; + 333)
-</li>
-<li>加上所有被5整除数
-       5 + 10 + &hellip; + 995 = 5 * (1 + 2 + &hellip; + 199)
-</li>
-<li>减去被15整除的数
-       15 + 30 + &hellip; + 995 = 15 * (1 + 2 + &hellip;+ 16)
-</li>
-</ol>
-
-
-
-<p>
-  其中(1 + 2 + &hellip; + n) = (1 + n) * n / 2;
-</p>
-<p>
-  333 = floor(1000/3);
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  233168
-</p>
-<p>
-Source:<a href="http://sdrv.ms/1512RxX">C++</a>
-</p></div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1164,6 +1146,10 @@ Source:<a href="http://sdrv.ms/1512RxX">C++</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/03/project-euler-31/">project euler problem 31</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/02/project-euler-26/">project euler problem 26</a>
       </li>
     
@@ -1179,10 +1165,6 @@ Source:<a href="http://sdrv.ms/1512RxX">C++</a>
         <a href="/blog/2013/06/15/fengrufeitun/">丰乳肥臀</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/06/15/The-Game/">把妹达人</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1191,7 +1173,7 @@ Source:<a href="http://sdrv.ms/1512RxX">C++</a>
     <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (37)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (38)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
 <li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
