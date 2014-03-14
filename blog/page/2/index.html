@@ -11,7 +11,7 @@
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem A perfect number is a number for which the sum of its proper divisors is exactly equal to &hellip;">
+3 Answer 1 Problem 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145. Find the sum of all numbers &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -131,6 +131,102 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/09/project-euler-34/">Project Euler Problem 34</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-09T16:52:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/09/project-euler-34/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+</p>
+<p>
+Find the sum of all numbers which are equal to the sum of the factorial of their digits.
+</p>
+<p>
+Note: as 1! = 1 and 2! = 2 are not sums they are not included.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  问题的关键只要找出上界就行.跟<a href="http://kingfighter.github.io/blog/2013/05/24/project-euler-30/">Project Euler Problem 30</a> 类似,设上界为n位数字,则
+</p>
+<p>  
+  \(10^n\) &lt; 9! * n 
+</p>
+<p>
+  易知n最大为7,更确切的说其上界为 9! * n = 2540160; <br/>
+  剩下的就是遍历查找了
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  40730
+</p>
+<p>
+Source:<a href="http://sdrv.ms/17Dui18">C++</a>
+</p></div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1069,142 +1165,6 @@ Source:<a href="http://sdrv.ms/14mgHHl">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/17/project-euler-21/">Project Euler Problem 21</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-17T16:34:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/05/17/project-euler-21/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
-If d(a) = b and d(b) = a, where a  b, then a and b are an amicable pair and each of a and b are called amicable numbers.
-</p>
-<p>
-For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
-</p>
-<p>
-Evaluate the sum of all the amicable numbers under 10000.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-
-<p>
-  按题意暴力求解,但我们还是能在细节进行一些优化.
-</p><ol>
-<li>我们只寻找amicable pair numbers中小的数,但相加时把两者都加上.
-</li>
-<li>getDivisorSum的优化
-<ol>
-<li>直观的,循环只要到sqrt(n)就行,因为除数是对应的,n = a * b,由反证法易知一数小于等于sqrt(n)，另一数大于等于sqrt(n);
-</li>
-<li>我们考虑求质数,公式(
-                      \ref{ref1}
-        ),公式(
-        \ref{ref2}
-        )明显成立,公式(
-        \ref{ref3}
-        )左右两边展开相等可证<br/>
-
-
-
-
-<pre class="example">getDivisorSum(p1*p2*..p_n) = 1+ p1 + p2 + ... pn + p1p2 + .. + p(n-1)p(n) + ... + p1p2..pn 
-                           = (1 + p1)(1 + p2)...(1 + pn) 
-                           = getDivisorSum(p1) * getDivisorSum(p2) * ... * getDivisorSum(pn)
-</pre>
-
-</li>
-</ol>
-
-</li>
-</ol>
-
-
-\begin{eqnarray}
-getDivisorSum(p) = (p + 1)\label{ref1}&#92;
-\end{eqnarray}
-\begin{eqnarray}
-getDivisorSum(p^i) = 1 + p^2 + &#8230; + p^i = \frac{p^{i+1}-1}{p-1}\label{ref2}&#92;
-\end{eqnarray}
-\begin{eqnarray}
-getDivisorSum(p1*p2*..p_n) = getDivisorSum(p1) * getDivisorSum(p2) * &#8230;\label{ref3}
-\end{eqnarray}
-
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  31626
-</p>
-<p>
-Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
-</p>
-
-
-
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1222,6 +1182,10 @@ Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/14/project-euler-42/">project euler problem 42</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/03/project-euler-31/">project euler problem 31</a>
       </li>
     
@@ -1237,10 +1201,6 @@ Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
         <a href="/blog/2013/08/26/project-euler-37/">project euler problem 37</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/06/15/fengrufeitun/">丰乳肥臀</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1249,7 +1209,7 @@ Source:<a href="http://sdrv.ms/10Jy5Co">C++</a>
     <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (38)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (39)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
 <li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>

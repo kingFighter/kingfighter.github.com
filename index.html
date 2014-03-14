@@ -10,9 +10,8 @@
 
   
   <meta name="description" content="Table of Contents 1 Problem
-2 Solution 2.1 Brute Force
-2.2 Recursion
-2.3 DP 3 Answer Problem In England the currency is made up of pound, £, and &hellip;">
+2 Solution
+3 Answer Problem The nth term of the sequence of triangle numbers is given by, tn = ½n(n+1); so the first ten &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -132,6 +131,98 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/14/project-euler-42/">Project Euler Problem 42</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-14T21:11:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/03/14/project-euler-42/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>The nth term of the sequence of triangle numbers is given by, tn = ½n(n+1); so the first ten triangle numbers are:
+</p>
+<p>
+1, 3, 6, 10, 15, 21, 28, 36, 45, 55, &hellip;
+</p>
+<p>
+By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value is a triangle number then we shall call the word a triangle word.
+</p>
+<p>
+Using <a href="https://projecteuler.net/project/words.txt">words.txt</a> (right click and &#8216;Save Link/Target As&hellip;&#8217;), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>太简单
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>162
+</p>
+<p>
+Source:<a href="https://github.com/kingFighter/project-euler">project-euler</a>
+</p></div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1104,102 +1195,6 @@ Source:<a href="http://sdrv.ms/17DumxU">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/09/project-euler-34/">Project Euler Problem 34</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-09T16:52:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/09/project-euler-34/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
-</p>
-<p>
-Find the sum of all numbers which are equal to the sum of the factorial of their digits.
-</p>
-<p>
-Note: as 1! = 1 and 2! = 2 are not sums they are not included.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  问题的关键只要找出上界就行.跟<a href="http://kingfighter.github.io/blog/2013/05/24/project-euler-30/">Project Euler Problem 30</a> 类似,设上界为n位数字,则
-</p>
-<p>  
-  \(10^n\) &lt; 9! * n 
-</p>
-<p>
-  易知n最大为7,更确切的说其上界为 9! * n = 2540160; <br/>
-  剩下的就是遍历查找了
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  40730
-</p>
-<p>
-Source:<a href="http://sdrv.ms/17Dui18">C++</a>
-</p></div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1213,6 +1208,10 @@ Source:<a href="http://sdrv.ms/17Dui18">C++</a>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/03/14/project-euler-42/">project euler problem 42</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/03/03/project-euler-31/">project euler problem 31</a>
@@ -1230,10 +1229,6 @@ Source:<a href="http://sdrv.ms/17Dui18">C++</a>
         <a href="/blog/2013/08/26/project-euler-37/">project euler problem 37</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/06/15/fengrufeitun/">丰乳肥臀</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1242,7 +1237,7 @@ Source:<a href="http://sdrv.ms/17Dui18">C++</a>
     <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (38)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (39)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
 <li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>
