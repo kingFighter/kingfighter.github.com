@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>project euler problem 30 - eBash</title>
+  <title>project euler problem 39 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer 1 Problem Surprisingly there are only three numbers that can be written as the sum of fourth powers &hellip;">
+3 Answer Problem If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kingfighter.github.io//blog/2013/05/24/project-euler-30/">
+  <link rel="canonical" href="http://kingfighter.github.io//blog/2014/04/05/project-euler-39/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -134,7 +134,7 @@
   
   <header>
     
-      <h1 class="entry-title">Project Euler Problem 30</h1>
+      <h1 class="entry-title">Project Euler Problem 39</h1>
     
     
       <p class="meta">
@@ -150,7 +150,7 @@
   
 
 
-<time datetime="2013-05-24T22:20:00+08:00" pubdate data-updated="true">May 24<span>th</span>, 2013</time>
+<time datetime="2014-04-05T00:09:00+08:00" pubdate data-updated="true">Apr 5<span>th</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -172,28 +172,18 @@
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
+<h2 id="sec-1">Problem</h2>
 <div class="outline-text-2" id="text-1">
 
 <blockquote>
 
-<p>Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
-\begin{eqnarray*}
-1634 = 1^4 +6^4 + 3^4 + 4^4 &#92;
-\end{eqnarray*}
-\begin{eqnarray*}
-8208 = 8^4 + 2^4 + 0^4 + 8^4 &#92;
-\end{eqnarray*}
-\begin{eqnarray*}
-9474 = 9^4 + 4^4 + 7^4 + 4^4 &#92;
-\end{eqnarray*}
-As 1 = \(1^4\) is not a sum it is not included.
+<p>If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
 </p>
 <p>
-The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+{20,48,52}, {24,45,51}, {30,40,50}
 </p>
 <p>
-Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+For which value of p ≤ 1000, is the number of solutions maximised?
 </p>
 </blockquote>
 
@@ -203,48 +193,23 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
+<h2 id="sec-2">Solution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>  很直接,关键是找出上界.个位数是不符合题意的。我们检查多少位时其位数上的值的五次方的和不能表示相应的位数.我们可以看到,到7位数时,其最大就只能表示413343,更不用说8位,9位等了.故上界为354294
-</p>
-<p>  
-  \begin{eqnarray*}
-  9^5 + 9^5 = 118098 &#92;
-  \end{eqnarray*}
-  \begin{eqnarray*}
-  9^5 + 9^5 + 9^5 = 177147 &#92;
-  \end{eqnarray*}
-  \begin{eqnarray*}
-  9^5 + 9^5 + 9^5 + 9^5 = 236196 &#92;
-  \end{eqnarray*}
-  \begin{eqnarray*}
-  9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 295245 &#92;
-  \end{eqnarray*}
-  \begin{eqnarray*}
-  9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 354294 &#92;
-  \end{eqnarray*}
-  \begin{eqnarray*}
-  9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 413343 &#92;
-  \end{eqnarray*}
-
+<p>简单,Brute Force.
 </p></div>
 
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
+<h2 id="sec-3">Answer</h2>
 <div class="outline-text-2" id="text-3">
 
-<p>  443839
+<p>840
 </p>
 <p>
-Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
-</p>
-
-
-
-</div>
+Source:<a href="https://github.com/kingFighter/project-euler">project-euler</a>
+</p></div>
 </div>
 </div>
 
@@ -268,7 +233,7 @@ Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
   
 
 
-<time datetime="2013-05-24T22:20:00+08:00" pubdate data-updated="true">May 24<span>th</span>, 2013</time>
+<time datetime="2014-04-05T00:09:00+08:00" pubdate data-updated="true">Apr 5<span>th</span>, 2014</time>
       
 
 <span class="categories">
@@ -282,7 +247,7 @@ Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2013/05/24/project-euler-30/" data-via="" data-counturl="http://kingfighter.github.io//blog/2013/05/24/project-euler-30/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2014/04/05/project-euler-39/" data-via="" data-counturl="http://kingfighter.github.io//blog/2014/04/05/project-euler-39/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -293,10 +258,8 @@ Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/05/23/project-euler-24/" title="Previous Post: project euler problem 24">&laquo; project euler problem 24</a>
+        <a class="basic-alignment left" href="/blog/2014/04/04/project-euler-45/" title="Previous Post: project euler problem 45">&laquo; project euler problem 45</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/05/31/project-euler-67/" title="Next Post: project euler problem 67">project euler problem 67 &raquo;</a>
       
     </p>
   </footer>
@@ -372,8 +335,8 @@ Source:<a href="http://sdrv.ms/10SnRyK">C++</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://kingfighter.github.io//blog/2013/05/24/project-euler-30/';
-        var disqus_url = 'http://kingfighter.github.io//blog/2013/05/24/project-euler-30/';
+        var disqus_identifier = 'http://kingfighter.github.io//blog/2014/04/05/project-euler-39/';
+        var disqus_url = 'http://kingfighter.github.io//blog/2014/04/05/project-euler-39/';
         var disqus_script = 'embed.js';
       
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://kingfighter.github.io//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://kingfighter.github.io//"/>
-  <updated>2014-04-04T23:32:12+08:00</updated>
+  <updated>2014-04-05T00:11:08+08:00</updated>
   <id>http://kingfighter.github.io//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 39]]></title>
+    <link href="http://kingfighter.github.io//blog/2014/04/05/project-euler-39/"/>
+    <updated>2014-04-05T00:09:00+08:00</updated>
+    <id>http://kingfighter.github.io//blog/2014/04/05/project-euler-39</id>
+    <content type="html"><![CDATA[<p></p></p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+</p>
+<p>
+{20,48,52}, {24,45,51}, {30,40,50}
+</p>
+<p>
+For which value of p ≤ 1000, is the number of solutions maximised?
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>简单,Brute Force.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>840
+</p>
+<p>
+Source:<a href="https://github.com/kingFighter/project-euler">project-euler</a>
+</p></div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 45]]></title>
@@ -415,105 +486,6 @@ Source:<a href="http://1drv.ms/1eOxC7U">C++</a>
 
 </div>
 </div>
-
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 40]]></title>
-    <link href="http://kingfighter.github.io//blog/2013/08/28/project-euler-40/"/>
-    <updated>2013-08-28T21:51:00+08:00</updated>
-    <id>http://kingfighter.github.io//blog/2013/08/28/project-euler-40</id>
-    <content type="html"><![CDATA[<p></p></p>
-
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>An irrational decimal fraction is created by concatenating the positive integers:
-</p>
-<p>
-0.123456789101112131415161718192021&hellip;
-</p>
-<p>
-It can be seen that the \(12^{th}\) digit of the fractional part is 1.
-</p>
-<p>
-If dn represents the nth digit of the fractional part, find the value of the following expression.
-</p>
-
-
-\begin{eqnarray*}
-d_{1} × d_{10} × d_{100} × d_{1000} × d_{10000} × d_{100000} × d_{1000000}
-\end{eqnarray*}
-
-</blockquote>
-
-
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>二分法,我们无法直接得知第ith的digit,但是容易知道number n所在的位置.要找ith的digit,其必夹在1~i number之间的某个位置.如：
-</p>
-<p>
-找1000th的digit
-</p><ol>
-<li>其必夹在1~1000 number之间,易知 (1 + 1000) / 2 = 500 的最后一位0在序列中的位置为1392th(number 11的最后一位1的位置为13),比1000th大,则必在1~499间
-</li>
-<li>如此往复,我们可以找到最接近的number 370,其最后一位0为1002th,则1000th为digit 3
-</li>
-</ol>
-
-
-<p>
-依此法可以找到任意ith的digit
-</p></div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  210
-</p>
-<p>
-Source:<a href="http://sdrv.ms/1cjMvR3">C++</a>
-</p>
-
-
-
-
 
 </div>
 </div>
