@@ -11,7 +11,7 @@
   
   <meta name="description" content="Table of Contents 1 Problem
 2 Solution
-3 Answer Problem If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there &hellip;">
+3 Answer Problem The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -131,6 +131,129 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/10/project-euler-33/">Project Euler Problem 33</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-10T22:38:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/04/10/project-euler-33/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
+</p>
+<p>
+We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+</p>
+<p>
+There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+</p>
+<p>
+If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>很简单,解空间很小,可直接Brute Force.
+</p>
+<p>
+但我们可以进一步缩小解空间.其可能的四种形式:
+</p><ol>
+<li>\begin{eqnarray*}
+   \frac{10a+b}{10c+b} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10a+b}{10b+c} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10b+a}{10c+b} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10b+a}{10b+c} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+</ol>
+
+
+<p>
+对于1,4 化简得出a=c,与条件矛盾
+</p>
+<p>
+对于3,可利用a,b,c &lt;=9 及a&lt;b可得到矛盾
+</p>
+<p>
+对此只有2才是可能的形式
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>100
+</p>
+<p>
+Source:<a href="https://github.com/kingFighter/project-euler">project-euler</a>
+</p></div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1053,111 +1176,6 @@ Source:<a href="http://sdrv.ms/17eVSQE">C++</a>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/14/project-euler-27/">Project Euler Problem 27</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-14T23:31:00+08:00" pubdate data-updated="true">Jun 14<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/14/project-euler-27/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>Euler discovered the remarkable quadratic formula:
-</p>
-<p>
-n² + n + 41
-</p>
-<p>
-It turns out that the formula will produce 40 primes for the consecutive values n = 0 to 39. However, when n = 40, 402 + 40 + 41 = 40(40 + 1) + 41 is divisible by 41, and certainly when n = 41, 41² + 41 + 41 is clearly divisible by 41.
-</p>
-<p>
-The incredible formula  n² - 79n + 1601 was discovered, which produces 80 primes for the consecutive values n = 0 to 79. The product of the coefficients, -79 and 1601, is -126479.
-</p>
-<p>
-Considering quadratics of the form:
-</p>
-<p>
-n² + an + b, where |a| &lt; 1000 and |b| &lt; 1000
-</p>
-<p>
-where |n| is the modulus/absolute value of n <br/>
-e.g. |11| = 11 and |-4| = 4 
-</p>
-<p>
-Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p> Brute Force,当然如果n为0时,可知b必为素数.还可以试图代入n = 1等,得出a,b相应性质,减小复杂度
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  -59231
-</p>
-<p>
-Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
-</p></div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1171,6 +1189,10 @@ Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/10/project-euler-33/">project euler problem 33</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/04/05/project-euler-39/">project euler problem 39</a>
@@ -1188,10 +1210,6 @@ Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
         <a href="/blog/2014/03/03/project-euler-31/">project euler problem 31</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/03/02/project-euler-26/">project euler problem 26</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1200,7 +1218,7 @@ Source:<a href="http://sdrv.ms/12MpHJ9">C++</a>
     <li class='category'><a href='/blog/categories/masterpiece/'>masterpiece (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/practicality/'>practicality (1)</a></li>
-<li class='category'><a href='/blog/categories/project-euler/'>project euler (41)</a></li>
+<li class='category'><a href='/blog/categories/project-euler/'>project euler (42)</a></li>
 <li class='category'><a href='/blog/categories/reading/'>reading (3)</a></li>
 <li class='category'><a href='/blog/categories/relationship/'>relationship (1)</a></li>
 <li class='category'><a href='/blog/categories/statement/'>statement (1)</a></li>

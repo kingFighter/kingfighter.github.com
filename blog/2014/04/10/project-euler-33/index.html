@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>octopress-encoding-problem - eBash</title>
+  <title>project euler problem 33 - eBash</title>
   <meta name="author" content="Lv Kaiyang(Kevin Lui)">
 
   
-  <meta name="description" content="初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题 注意：我的安装环境为win7 64位 rake generate提示编码错误 以下是我碰到的已经解决的问题 ...
-/convertible.rb:29:in `read_yaml': invalid byte &hellip;">
+  <meta name="description" content="Table of Contents 1 Problem
+2 Solution
+3 Answer Problem The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kingfighter.github.io//blog/2012/10/07/octopress-encoding-problem/">
+  <link rel="canonical" href="http://kingfighter.github.io//blog/2014/04/10/project-euler-33/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -133,7 +134,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress-encoding-problem</h1>
+      <h1 class="entry-title">Project Euler Problem 33</h1>
     
     
       <p class="meta">
@@ -149,7 +150,7 @@
   
 
 
-<time datetime="2012-10-07T15:58:00+08:00" pubdate data-updated="true">Oct 7<span>th</span>, 2012</time>
+<time datetime="2014-04-10T22:38:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -158,124 +159,91 @@
   </header>
 
 
-<div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">初始安装使用octopress总会碰到各种问题，比较常见的就是编码问题</h2>
+<div class="entry-content"></p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
 <div class="outline-text-2" id="text-1">
 
+<blockquote>
 
-<p>
-<b>注意：我的安装环境为win7 64位</b>
-</p>
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">rake generate提示编码错误</h3>
-<div class="outline-text-3" id="text-1-1">
-
-
-<p>
-以下是我碰到的已经解决的问题
-</p>
-
-
-
-<pre class="example">...
-/convertible.rb:29:in `read_yaml': invalid byte sequence in GBK (ArgumentError)
-....
-</pre>
-
-
-<p>
-原因：你生成的文件编码方式不是Ansi(比如是UTF－8)
+<p>The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
 </p>
 <p>
-解决：转换文件编码为Ansi即可，不过生成的网页在UTF-8下会显示乱码
-</p>
-
-
-
-<pre class="example">...
-invalid byte sequence in UTF-8 (ArgumentError)
-...
-</pre>
-
-
-<p>
-原因：你生成的文件编码方式为UTF-8，,但在Ruby <b>convertible.rb</b> 文件中没有进行相应的修改
+We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
 </p>
 <p>
-解决：
+There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
 </p>
-
-
-<pre class="example">def read_yaml(base, name)
-     -self.content = File.read(File.join(base, name))
-     +self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
-</pre>
-
+<p>
+If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+</p>
+</blockquote>
 
 
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">下面是我尝试但无效的解决方法</h4>
-<div class="outline-text-4" id="text-1-1-1">
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>很简单,解空间很小,可直接Brute Force.
+</p>
+<p>
+但我们可以进一步缩小解空间.其可能的四种形式:
+</p><ol>
+<li>\begin{eqnarray*}
+   \frac{10a+b}{10c+b} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10a+b}{10b+c} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10b+a}{10c+b} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10b+a}{10b+c} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+</ol>
 
 
 <p>
-解决： 在命令行下改变当前代码页编码为UTF-8：
+对于1,4 化简得出a=c,与条件矛盾
 </p>
-
-
-<pre class="example">chcp.com 65001
-</pre>
-
-
-
 <p>
-解决：
+对于3,可利用a,b,c &lt;=9 及a&lt;b可得到矛盾
 </p>
-
-
-<pre class="example">`打开 shell|cmd 之后，先执行
-
-    set LC_ALL=en_US.UTF-8
-    set LANG=en_US.UTF-8
-然后再执行 rake 的命令。
-或者，在 d:\RailsInstaller\Ruby1.9.2\setup_environment.bat 的最后面加上这两句。
-</pre>
-
-
 <p>
-解决：在octopress根目录下加
-</p>
-
-
-<pre class="example">export LC_ALL=zh_CN.UTF-8
-export LANG=zh_CN.UTF-8
-</pre>
-
-
-<p>
-解决：与上一解决方法相似，只是加入的位置不同
-</p>
-
-
-<pre class="example">在git bash下
-cd ~
-emacs -nw .bash_profile
-加入
-export   LC_ALL=zh_CN.UTF-8
-export   LANG=zh_CN.UTF-8
-</pre>
-
-
-
+对此只有2才是可能的形式
+</p></div>
 
 </div>
-</div>
-</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>100
+</p>
+<p>
+Source:<a href="https://github.com/kingFighter/project-euler">project-euler</a>
+</p></div>
 </div>
 </div>
 
@@ -299,12 +267,12 @@ export   LANG=zh_CN.UTF-8
   
 
 
-<time datetime="2012-10-07T15:58:00+08:00" pubdate data-updated="true">Oct 7<span>th</span>, 2012</time>
+<time datetime="2014-04-10T22:38:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/project-euler/'>project euler</a>
   
 </span>
 
@@ -313,7 +281,7 @@ export   LANG=zh_CN.UTF-8
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2012/10/07/octopress-encoding-problem/" data-via="" data-counturl="http://kingfighter.github.io//blog/2012/10/07/octopress-encoding-problem/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kingfighter.github.io//blog/2014/04/10/project-euler-33/" data-via="" data-counturl="http://kingfighter.github.io//blog/2014/04/10/project-euler-33/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -324,10 +292,8 @@ export   LANG=zh_CN.UTF-8
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/10/07/statement/" title="Previous Post: statement">&laquo; statement</a>
+        <a class="basic-alignment left" href="/blog/2014/04/05/project-euler-39/" title="Previous Post: project euler problem 39">&laquo; project euler problem 39</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/28/project-euler-1/" title="Next Post: project euler problem 1">project euler problem 1 &raquo;</a>
       
     </p>
   </footer>
@@ -403,8 +369,8 @@ export   LANG=zh_CN.UTF-8
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://kingfighter.github.io//blog/2012/10/07/octopress-encoding-problem/';
-        var disqus_url = 'http://kingfighter.github.io//blog/2012/10/07/octopress-encoding-problem/';
+        var disqus_identifier = 'http://kingfighter.github.io//blog/2014/04/10/project-euler-33/';
+        var disqus_url = 'http://kingfighter.github.io//blog/2014/04/10/project-euler-33/';
         var disqus_script = 'embed.js';
       
 

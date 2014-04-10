@@ -4,7 +4,7 @@
   <title><![CDATA[eBash]]></title>
   <link href="http://kingfighter.github.io//atom.xml" rel="self"/>
   <link href="http://kingfighter.github.io//"/>
-  <updated>2014-04-05T00:11:08+08:00</updated>
+  <updated>2014-04-10T23:06:11+08:00</updated>
   <id>http://kingfighter.github.io//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[project euler problem 33]]></title>
+    <link href="http://kingfighter.github.io//blog/2014/04/10/project-euler-33/"/>
+    <updated>2014-04-10T22:38:00+08:00</updated>
+    <id>http://kingfighter.github.io//blog/2014/04/10/project-euler-33</id>
+    <content type="html"><![CDATA[</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Problem</a></li>
+<li><a href="#sec-2">2 Solution</a></li>
+<li><a href="#sec-3">3 Answer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Problem</h2>
+<div class="outline-text-2" id="text-1">
+
+<blockquote>
+
+<p>The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
+</p>
+<p>
+We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+</p>
+<p>
+There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+</p>
+<p>
+If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+</p>
+</blockquote>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Solution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>很简单,解空间很小,可直接Brute Force.
+</p>
+<p>
+但我们可以进一步缩小解空间.其可能的四种形式:
+</p><ol>
+<li>\begin{eqnarray*}
+   \frac{10a+b}{10c+b} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10a+b}{10b+c} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10b+a}{10c+b} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+<li>\begin{eqnarray*}
+   \frac{10b+a}{10b+c} = \frac{a}{c}
+   \end{eqnarray*}
+</li>
+</ol>
+
+
+<p>
+对于1,4 化简得出a=c,与条件矛盾
+</p>
+<p>
+对于3,可利用a,b,c &lt;=9 及a&lt;b可得到矛盾
+</p>
+<p>
+对此只有2才是可能的形式
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Answer</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>100
+</p>
+<p>
+Source:<a href="https://github.com/kingFighter/project-euler">project-euler</a>
+</p></div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[project euler problem 39]]></title>
@@ -1447,77 +1541,6 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
 </p>
 <p>  
 Source:<a href="http://sdrv.ms/10SI5JC">C++</a>
-</p>
-
-
-
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[project euler problem 19]]></title>
-    <link href="http://kingfighter.github.io//blog/2013/05/20/project-euler-19/"/>
-    <updated>2013-05-20T16:56:00+08:00</updated>
-    <id>http://kingfighter.github.io//blog/2013/05/20/project-euler-19</id>
-    <content type="html"><![CDATA[</p>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 Problem</a></li>
-<li><a href="#sec-2">2 Solution</a></li>
-<li><a href="#sec-3">3 Answer</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Problem</h2>
-<div class="outline-text-2" id="text-1">
-
-<blockquote>
-
-<p>  You are given the following information, but you may prefer to do some research for yourself.
-</p>
-<p>
-1 Jan 1900 was a Monday.<br/>
-Thirty days has September,<br/>
-April, June and November.<br/>
-All the rest have thirty-one,<br/>
-Saving February alone,<br/>
-Which has twenty-eight, rain or shine.<br/>
-And on leap years, twenty-nine.<br/>
-A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
-</p>
-<p>
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
-</p>
-</blockquote>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Solution</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>  很直接的,查下表1901/1/1是星期二,此时设表示周几的变量numOfDay = 2,那么1901/2/1是周几？只要numOfDay加上一月份的天数31,再模7得5知为周五.依此法检测1901~2000每月第一天是周几。注意:别忘了2月份的天数需要是否闰年的判断.
-</p></div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Answer</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>  171
-</p>
-<p>  
-Source:<a href="http://sdrv.ms/Z9jHbc">C++</a>
 </p>
 
 
