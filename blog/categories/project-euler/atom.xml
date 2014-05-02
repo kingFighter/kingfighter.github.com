@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project euler | eBash]]></title>
   <link href="http://kingfighter.github.io//blog/categories/project-euler/atom.xml" rel="self"/>
   <link href="http://kingfighter.github.io//"/>
-  <updated>2014-04-24T15:35:09+08:00</updated>
+  <updated>2014-05-02T13:43:43+08:00</updated>
   <id>http://kingfighter.github.io//</id>
   <author>
     <name><![CDATA[Lv Kaiyang(Kevin Lui)]]></name>
@@ -38,10 +38,19 @@
 <div class="outline-text-2" id="text-1">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="right" />
+<colgroup><col class="right" /><col class="right" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
+<thead>
+<tr><th scope="col" class="right">32</th><th scope="col" class="right">52</th><th scope="col" class="left">41</th><th scope="col" class="left">53</th><th scope="col" class="left">38</th></tr>
+</thead>
 <tbody>
-<tr><td class="right">32</td></tr>
+<tr><td class="right">45228</td><td class="right">142857</td><td class="left">7652413</td><td class="left">4075</td><td class="left">932718654</td></tr>
+</tbody>
+<tbody>
+<tr><td class="right">50</td><td class="right">56</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="right">997651</td><td class="right">972</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </tbody>
 </table>
 
