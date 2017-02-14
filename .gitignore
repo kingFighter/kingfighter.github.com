@@ -1,0 +1,12 @@
+__pycache__/
+cache/
+*.pyc
+*.pyo
+output
+plugins
+*.zhs.rst
+content/uml
+GH_TOKEN
+
+
+
